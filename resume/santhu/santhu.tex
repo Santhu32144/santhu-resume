@@ -1,0 +1,283 @@
+% =============================================================================
+%  Santhosh R — Resume
+%  Tuned to match santhu.pdf (which is rendered from santhu.html via Chrome).
+%  Compile on Overleaf with pdfLaTeX.
+%
+%  NOTE ON THE FONT: the HTML/PDF renders in Georgia, a Microsoft font that
+%  Overleaf does not ship. XCharter below is the closest freely available
+%  match (same transitional-serif class, similar large x-height). If you want
+%  a Times-like look instead, swap \usepackage{XCharter} for \usepackage{newtxtext}.
+% =============================================================================
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{XCharter}          % serif face closest to Georgia
+\usepackage{microtype}         % better spacing + \textls letterspacing
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{needspace}         % keeps a project block from splitting across pages
+\usepackage{hyperref}
+
+% ---- Page ------------------------------------------------------------------
+\geometry{a4paper, left=0.5in, right=0.5in, top=0.4in, bottom=0.4in}
+\pagenumbering{gobble}
+
+% ---- Colours (match the HTML tokens) ---------------------------------------
+\definecolor{primary}{HTML}{34688F}   % section headings + role titles
+\definecolor{muted}{HTML}{555555}     % org lines, stack lines, dates
+\definecolor{linkblue}{HTML}{1A5FB4}
+
+\hypersetup{colorlinks=true, urlcolor=linkblue, linkcolor=linkblue}
+
+% ---- Body type: 9.5pt on 11.9pt leading (= HTML 9.5pt / line-height 1.25) ---
+\renewcommand{\baselinestretch}{1.0}
+\AtBeginDocument{\fontsize{9.5}{11.9}\selectfont}
+
+% ---- Section headings: 11.2pt bold, primary, hairline rule under -----------
+\titleformat{\section}
+  {\color{primary}\bfseries\fontsize{11.2}{13}\selectfont}
+  {}{0em}{}
+  [\vspace{-5pt}{\color{primary}\rule{\linewidth}{0.6pt}}]
+\titlespacing*{\section}{0pt}{6pt}{3pt}
+
+% ---- Tight lists -----------------------------------------------------------
+\setlist[itemize]{
+  leftmargin=11pt, topsep=2pt, itemsep=1pt, parsep=0pt,
+  partopsep=0pt, label=\textbullet
+}
+
+% ---- Helpers ---------------------------------------------------------------
+% Role: #1 title, #2 dates, #3 company
+\newcommand{\role}[3]{%
+  \vspace{5pt}%
+  \noindent{\color{primary}\bfseries\fontsize{10.6}{12}\selectfont #1}%
+  \hfill{\bfseries\fontsize{9.6}{11}\selectfont #2}\\[1pt]
+  {\color{muted}\fontsize{9.6}{11}\selectfont #3}%
+  \vspace{-3pt}%
+}
+
+% A one-line "left ... right" row. \parfillskip is zeroed locally, otherwise
+% \hfill on a paragraph's LAST line splits the space with \parfillskip and the
+% right-hand item only travels halfway across.
+\newcommand{\spreadline}[1]{%
+  \par\vspace{1pt}%
+  {\setlength{\parfillskip}{0pt}\noindent #1\par}%
+}
+
+% Project: #1 name, #2 stack, #3 right-hand note/link ("" for none)
+%
+% The name sits on its own line with the right-hand link flush right; the stack
+% goes underneath. Keeping them on separate lines avoids the overfull line the
+% long Habex stack + link would otherwise produce. \needspace stops a project
+% heading from being stranded at the foot of a page.
+\newcommand{\project}[3]{%
+  \needspace{5\baselineskip}%
+  \vspace{5pt}%
+  \def\projright{#3}%
+  \ifx\projright\empty
+    \par\noindent\textbf{#1}\par
+  \else
+    \spreadline{\textbf{#1}\hspace{1.5em}\hfill{\small #3}}%
+  \fi
+  \vspace{-1pt}%
+  \par\noindent{\color{muted}\itshape\small #2}%
+  \vspace{-3pt}%
+}
+
+% Education row: #1 institution, #2 detail, #3 dates
+\newcommand{\edurow}[3]{%
+  \spreadline{{\color{primary}\bfseries #1}~{\color{muted}\small --- #2}%
+              \hfill{\bfseries\small #3}}%
+}
+
+% Secondary (grey) education row
+\newcommand{\edurowalt}[3]{%
+  \spreadline{{\color{muted}\small\textbf{#1} --- #2}\hfill{\color{muted}\small #3}}%
+}
+
+\newcommand{\dmnd}{\,{\color{muted}$\diamond$}\,}
+
+\begin{document}
+
+% =============================== HEADER =====================================
+\begin{center}
+  {\bfseries\fontsize{18}{21}\selectfont\textls[120]{SANTHOSH R}}\\[4pt]
+  {\fontsize{9.4}{11}\selectfont
+   Bengaluru, Karnataka \dmnd 8550038177 \dmnd
+   \href{mailto:santhosh.dev.6704@gmail.com}{santhosh.dev.6704@gmail.com}}\\[3pt]
+  {\fontsize{9.4}{11}\selectfont
+   Portfolio: \href{https://santhu.site}{santhu.site} \dmnd
+   \href{https://github.com/Santhu32144}{github.com/Santhu32144} \dmnd
+   \href{https://www.linkedin.com/in/santhosh-r-64259b3b0}{linkedin.com/in/santhosh-r-64259b3b0}}\\[3pt]
+  {\color{muted}\itshape\fontsize{9.2}{11}\selectfont
+   Full Stack Engineer \dmnd React + TypeScript \dmnd Node.js \dmnd Embedded Linux \dmnd
+   Industrial IoT \& Real-Time Systems}
+\end{center}
+
+% =============================== SUMMARY ====================================
+\section{SUMMARY}
+\noindent Full stack engineer, 2.5+ years building software for \textbf{industrial automation
+hardware} --- a \textbf{React + TypeScript} operator UI and \textbf{Node.js/Express} backend
+shipped on customer-facing power distribution units. Works across the stack and down to the
+device: real-time telemetry over \textbf{Socket.IO}, \textbf{JWT} auth with role-based access,
+\textbf{Modbus / CAN} field protocols, and \textbf{embedded ARM Linux} --- from the Yocto-built
+OS image to systemd and nginx deployment.
+
+% =============================== SKILLS =====================================
+\section{SKILLS}
+\begin{itemize}
+  \item \textbf{Languages:} TypeScript, JavaScript (ES6+), Python, Kotlin, C, C++, SQL
+  \item \textbf{Frontend \& Mobile:} React 18/19, Redux Toolkit, Zustand, React Router, Tailwind CSS, Recharts, Vite, React Native CLI
+  \item \textbf{Backend:} Node.js, Express 5, REST API design, Socket.IO / WebSockets, JWT (access + refresh), RBAC, Swagger/OpenAPI, Winston
+  \item \textbf{Python:} FastAPI, Flask, SQLAlchemy, Pydantic, Selenium, Tkinter, pandas / scikit-learn (gradient-boosted models), Docker \& PyInstaller packaging
+  \item \textbf{Databases \& Architecture:} SQLite, Firebase/Firestore + security rules, PostgreSQL (Supabase, migrations, RLS), MySQL, MongoDB; system design, real-time data pipelines, API contract design
+  \item \textbf{Embedded Linux:} Yocto Project (Kirkstone), BitBake, devtool, U-Boot, kernel config, device tree, NXP i.MX8M Plus
+  \item \textbf{Linux \& DevOps:} Ubuntu and embedded ARM Linux, Bash scripting, systemd units, nginx (reverse proxy + static hosting), udev automount, journald, Git, GitLab, Jest, \texttt{pkg} (ARM64 binaries), Vercel, Postman
+  \item \textbf{Domain:} Industrial IoT and automation, CAN / Modbus / I2C fieldbus, embedded Linux HMI \& touch panels, real-time device telemetry, edge-to-cloud data flow
+\end{itemize}
+
+% ============================= EXPERIENCE ===================================
+\section{WORK EXPERIENCE}
+
+\role{Senior Software Engineer --- Full Stack}{06/2025 -- Present}{Delta Electronics India, Bengaluru}
+\begin{itemize}
+  \item Sole developer of the \textbf{PDU Gen-3 platform}: an embedded React touch-panel UI, a
+    \textbf{Vite + React + Tailwind} admin configurator, and a Node.js/Express microservice ---
+    shipped on customer-facing Power Distribution Units.
+  \item Designed and built the backend from scratch in \textbf{TypeScript}: 17 route modules
+    covering measurement, alarms, calibration, event/data logs, configuration, user management
+    and system control, documented with \textbf{Swagger/OpenAPI}.
+  \item Implemented \textbf{JWT authentication} with short-lived access tokens and httpOnly
+    refresh cookies, plus \textbf{role-based access control} where permissions are re-resolved on
+    every refresh so revocation applies instantly to live sessions.
+  \item Built a \textbf{real-time energy sampler} that runs independently of the UI --- samples
+    power every 5s into a rolling one-hour window and mirrors it to disk, so data collection
+    never pauses on navigation and survives a backend restart.
+  \item Replaced per-page config fetching with a \textbf{boot-time bootstrap and API self-test},
+    surfacing a live ``backend disconnected'' indicator by reusing the existing Socket.IO
+    signal --- no extra heartbeat endpoint needed.
+  \item Automated device deployment with a \textbf{Bash self-extracting installer} that ships the
+    packaged \textbf{ARM64 Linux binary} and both web builds, provisions \textbf{systemd} units
+    and an \textbf{nginx} reverse proxy, and configures \textbf{udev}-driven USB automount ---
+    with versioned OTA updates and rollback backups.
+  \item Added structured \textbf{journald} logging, USB import/export and DB backup/restore for
+    field servicing.
+  \item Customised and built the PDU's \textbf{embedded Linux OS} with the \textbf{Yocto Project}
+    on an \textbf{NXP i.MX8M Plus}: \textbf{U-Boot} and kernel changes via \texttt{devtool}
+    (device tree, boot config, HDMI/UART drivers) plus custom \texttt{meta-delta} recipes.
+  \item Fixed a displaced, flickering boot splash: HDMI negotiated 1920$\times$1080 on a
+    1280$\times$800 panel, and a stale \textbf{U-Boot environment} in eMMC survived every reflash
+    --- so forced the mode in the kernel command line instead.
+  \item Found kernel config edits were silently dropped: \textbf{BitBake} hashed the fragment's
+    path, not its contents, so sstate reused a stale kernel and builds ``passed'' having rebuilt
+    nothing. Routed it through \texttt{SRC\_URI} so changes reach the image.
+  \item Restored GPIO on the \textbf{FT260} USB-to-I2C/UART bridge, whose shared pins the UART
+    re-claimed at an unpredictable point after boot; with the driver a prebuilt module, shipped a
+    \textbf{systemd} guard service as a new Yocto recipe.
+\end{itemize}
+
+\role{Graduate Engineer Trainee --- Frontend}{08/2024 -- 05/2025}{Delta Electronics India, Bengaluru}
+\begin{itemize}
+  \item Built the frontend of a customer-facing \textbf{PDU touch panel} in \textbf{React and
+    TypeScript}, overhauling a legacy layout into a responsive interface: architected state with
+    \textbf{Redux} and built a reusable component library from \textbf{Figma} designs, within
+    hardware constraints (fixed resolution, touch-only input, custom on-screen keyboard).
+\end{itemize}
+
+\role{Software Engineer Intern}{01/2024 -- 07/2024}{Delta Electronics India, Bengaluru}
+\begin{itemize}
+  \item Worked with \textbf{CAN, Modbus and I2C} protocols in industrial hardware; gained exposure
+    to \textbf{Linux CLI} tooling and \textbf{GitLab}, and reworked PDU UI/UX mockups in
+    \textbf{Figma}.
+\end{itemize}
+
+% ============================== PROJECTS ====================================
+% Projects (and everything after) start on page 2.
+\newpage
+\section{PROJECTS}
+
+\project{Jourvia --- Group Travel Companion App}
+        {React Native 0.85, TypeScript, Zustand, Firebase, Kotlin}
+        {\color{muted}\itshape Android $\cdot$ v1.0.2}
+\begin{itemize}
+  \item Trip planner for groups on the bare \textbf{React Native CLI} (New Architecture, no Expo), $\sim$36k lines of
+    TypeScript: routes parsed from a Google Maps link (geocoded, real road distance via OSRM, weather
+    per stop), friends, 1-to-1 chat with voice notes, packing lists, expense splitting that settles
+    up in the fewest payments, and a hold-to-trigger SOS.
+  \item Built a \textbf{live trip mode}: GPS auto check-in at each stop (300\,m radius, 2-min
+    dwell, auto-skip, ETAs) running in an \textbf{Android foreground service}, plus live location
+    sharing and arrival alerts for companions; check-ins are saved on-device first, then synced.
+  \item Wrote native \textbf{Kotlin} modules --- 5 home-screen widgets and a voice recorder --- and
+    a type-safe \textbf{i18n engine} covering English and 9 Indian languages with plurals and
+    fallback.
+  \item Owner / editor / member access in deny-by-default \textbf{Firestore security rules};
+    stale-while-revalidate caching over \textbf{Zustand} stores so trips load instantly and stay
+    readable offline; 65 \textbf{Jest} tests and a \textbf{GitHub Actions} pipeline (typecheck,
+    lint, test $\rightarrow$ signed release APK on version tags).
+\end{itemize}
+
+\project{LocalClaude --- Design Board}
+        {Electron, React, TypeScript, Claude Agent SDK}
+        {\href{https://github.com/partham20/localclaude}{Open source} $\cdot$ \href{https://github.com/partham20/localclaude/pulls?q=is\%3Apr+author\%3ASanthu32144}{2 merged PRs}}
+\begin{itemize}
+  \item Built the \textbf{Design} feature of an open-source Claude desktop app ($\sim$3.3k lines):
+    describe a prototype, slide deck, wireframe or one-pager, and Claude lays it out as frames on an
+    \textbf{infinite canvas} beside the chat --- pan, pinch-zoom, marquee multi-select, present mode,
+    version switching and click-to-comment revisions.
+  \item Frames render live via a \textbf{streaming partial-JSON parser} that reads tool-call input
+    mid-stream; multi-screen designs get a design system first, then fan out to up to 8
+    \textbf{parallel subagents}, one per screen.
+  \item Added PNG (2$\times$), PDF and HTML export (a whole deck as one PDF) rendered in a hidden,
+    sandboxed window; sped up session startup by skipping MCP servers, Chrome and computer use;
+    added unit and end-to-end tests.
+\end{itemize}
+
+\project{Habex --- Expense, Habit \& Investment Tracker}
+        {React, TypeScript, Supabase (Postgres), shadcn/ui, Tailwind}
+        {\href{https://habex.santhu.site}{habex.santhu.site} $\cdot$ \href{https://github.com/ZenblockLabs/exphabbits}{GitHub}}
+\begin{itemize}
+  \item Live personal-finance app on my own domain: expense entry with recurring rules and monthly
+    views, habit tracking with a 21-day challenge, shared investment groups, and an admin dashboard.
+  \item Backed by \textbf{Supabase Postgres} with 12 versioned \textbf{SQL migrations} and three
+    \textbf{edge functions} (PIN login, admin user management, activity audit) keeping privileged
+    operations off the client.
+\end{itemize}
+
+\project{FraudShield --- Accounts-Payable Fraud Detection API}
+        {Python, FastAPI, SQLAlchemy, Pydantic}{}
+\begin{itemize}
+  \item REST service that scores supplier invoices for fraud risk, with reviewer and admin
+    workflows and auto-generated \textbf{OpenAPI} docs.
+  \item Built a configurable \textbf{rules engine} --- amount thresholds, per-vendor invoice
+    velocity over a rolling window, and repeated round-amount detection --- feeding a scoring
+    service; paired with a \textbf{gradient-boosted} model trained on a labelled fraud dataset.
+\end{itemize}
+
+\project{Time Tracker --- Desktop Work-Hour Automation}
+        {Python, Tkinter, Selenium, PyInstaller}{}
+\begin{itemize}
+  \item Desktop app that automates weekly timesheet entry: drives an attendance portal with
+    \textbf{Selenium}, paging week by week and waiting on the rendered date before scraping each
+    day's records rather than relying on fixed sleeps.
+  \item Runs scraping off the UI thread and marshals results back to Tk's main loop, coalesces
+    per-keystroke writes into one debounced save, and ships as a standalone Windows executable
+    via \textbf{PyInstaller}.
+\end{itemize}
+
+% ============================== EDUCATION ===================================
+\section{EDUCATION}
+\edurow{Siddaganga Institute of Technology}{B.E. Electronics \& Instrumentation, CGPA 8.94}{Dec 2020 -- Jun 2024}
+\edurowalt{Vidyavahini PU College}{Class 11 \& 12, Pre-University (PCMB), 88.56\%}{May 2018 -- Jul 2020}
+\edurowalt{Vivekananda Vidya Mandira School}{Class X (SSLC), 78.64\%}{May 2017 -- May 2018}
+
+% ============================== ADDITIONAL ==================================
+\section{ADDITIONAL}
+\noindent\textbf{Hack-o-Smart} --- 24-hour Tumkur Smart City hackathon; built a district-level
+education platform surfacing seat availability and fee details. \dmnd
+\textbf{Certifications:} SQL (CodeChef), Digital Skills (HackerRank) \dmnd
+\textbf{Leadership:} NCC Rank Holder, 4 Kar Tumkur Battalion
+
+\end{document}

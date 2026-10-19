@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bindu J — Resume</title>
+<!--
+  Tailored for: Saksoft — "Java programming" (0–2 yrs; Java + OOP required;
+  data structures / C++ / problem-solving a plus; ECE a preferred stream).
+  Render:  chrome --headless --no-pdf-header-footer --print-to-pdf=bindu_cv_saksoft.pdf bindu_cv_saksoft.html
+  Keep to ONE page — check the PDF's /Count after every edit.
+-->
+<style>
+  @page { size: A4; margin: 0.4in 0.55in; }
+
+  :root {
+    --navy: #192d5a;
+    --ink: #111;
+    --muted: #444;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Georgia", "Cambria", serif;
+    font-size: 10pt;
+    line-height: 1.28;
+    color: var(--ink);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* ---- Header ---- */
+  header { text-align: center; margin-bottom: 2px; }
+  h1 {
+    font-variant: small-caps;
+    font-size: 23pt;
+    letter-spacing: 1px;
+    color: var(--navy);
+    margin: 0 0 3px;
+    line-height: 1;
+  }
+  .contact { font-size: 9.2pt; }
+  .contact .sep { color: #999; padding: 0 5px; }
+  .tagline {
+    margin-top: 3px;
+    font-size: 9.6pt;
+    font-style: italic;
+    color: var(--navy);
+  }
+
+  /* ---- Sections ---- */
+  h2 {
+    font-variant: small-caps;
+    font-size: 12pt;
+    letter-spacing: 0.5px;
+    color: var(--navy);
+    margin: 7px 0 3px;
+    padding-bottom: 1px;
+    border-bottom: 1.2px solid var(--navy);
+    line-height: 1.15;
+    break-after: avoid;
+  }
+
+  p { margin: 0; text-align: justify; }
+
+  ul { margin: 2px 0 0; padding-left: 15px; }
+  li { margin-bottom: 1.5px; text-align: justify; }
+  ul.skills li { text-align: left; margin-bottom: 1px; }
+
+  /* ---- Entries: left text, right-aligned place/date ---- */
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .row > :last-child { white-space: nowrap; flex-shrink: 0; }
+  .org { font-weight: 700; }
+  .sub { font-style: italic; }
+  .stack { font-style: italic; color: var(--muted); font-size: 9pt; }
+  .proj { margin-top: 5px; }
+  .edu { margin-top: 2px; }
+  .nw { white-space: nowrap; }  /* keep hyphenated words from splitting at line ends */
+
+  code {
+    font-family: "Consolas", monospace;
+    font-size: 8.8pt;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Bindu J</h1>
+  <div class="contact">
+    <a href="mailto:binduj2003j@gmail.com">binduj2003j@gmail.com</a><span class="sep">|</span>+91 9019264330<span class="sep">|</span><a href="https://www.linkedin.com/in/bindujagannath">linkedin.com/in/bindujagannath</a><span class="sep">|</span><a href="https://github.com/Bindu030103">github.com/Bindu030103</a>
+  </div>
+  <div class="tagline">Java Developer &nbsp;&middot;&nbsp; Core Java &amp; OOP &nbsp;&middot;&nbsp; Spring Boot &nbsp;&middot;&nbsp; REST APIs &nbsp;&middot;&nbsp; SQL</div>
+</header>
+
+<section>
+  <h2>Professional Summary</h2>
+  <p>
+    Java Developer with <strong>1+ year of full-time experience</strong> building production features in
+    <strong>Java 17, Spring Boot 3, JPA/Hibernate, and PostgreSQL</strong> on a multi-tenant SaaS platform.
+    Strong foundation in <strong>Core Java and Object-Oriented Programming</strong> (encapsulation,
+    inheritance, polymorphism, abstraction), applied in layered Spring Boot code, with data structures and
+    problem-solving fundamentals. <strong>2025 B.E. graduate in Electronics &amp; Communication Engineering
+    (ECE)</strong>; a clear communicator, team player, and eager learner.
+  </p>
+</section>
+
+<section>
+  <h2>Technical Skills</h2>
+  <ul class="skills">
+    <li><strong>Programming Languages:</strong> Java 17 (Core Java), C++ (Basics), SQL</li>
+    <li><strong>Core Java &amp; OOP:</strong> Classes &amp; Objects, Encapsulation, Inheritance, Polymorphism, Abstraction,
+      Interfaces &amp; Abstract Classes, Collections Framework, Exception Handling</li>
+    <li><strong>Data Structures &amp; Problem Solving:</strong> Arrays, Strings</li>
+    <li><strong>Java Backend:</strong> Spring Boot 3, REST APIs, Spring Data JPA/Hibernate, Spring Security,
+      OAuth 2.0, JWT, Maven</li>
+    <li><strong>Database:</strong> PostgreSQL</li>
+    <li><strong>Soft Skills:</strong> Communication, Presentation, Teamwork, Professional Attitude,
+      Willingness to Learn</li>
+    <li><strong>Languages Spoken:</strong> English, Kannada, Telugu</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Professional Experience</h2>
+
+  <div class="row"><span class="org">ProBits Technology Pvt Ltd</span><span>Bengaluru, India</span></div>
+  <div class="row sub"><span>Associate Software Developer</span><span>June 2025 &ndash; Present</span></div>
+  <ul>
+    <li>Full-stack developer on Savoira: built <strong>Java 17 / Spring Boot 3</strong> REST APIs, business logic,
+      and <strong>JPA/Hibernate</strong> persistence over PostgreSQL, plus React UIs &mdash; owning features from
+      requirements through production release.</li>
+    <li>Collaborated in an <strong>Agile/Scrum</strong> team through sprint planning, code reviews, and pair programming
+      with senior developers; delivered work via Git feature branches and pull requests.</li>
+  </ul>
+
+  <div class="proj">
+    <div class="row"><span><strong>Savoira &mdash; Multi-Tenant SaaS Platform</strong></span><span class="sub">Dec 2025 &ndash; Present</span></div>
+    <div class="stack">Java 17, Spring Boot 3, Spring Security, Spring Data JPA/Hibernate, PostgreSQL, Flyway, OAuth 2.0, JWT, React 18, Redux</div>
+    <ul>
+      <li><strong>REST APIs &amp; Reporting:</strong> built <strong>17 Spring Boot REST endpoints</strong> powering 8 report
+        sections across 2 analytics dashboards with KPI-to-record drill-down; wrote a reusable
+        <code>DateRangeResolver</code> for all report filters.</li>
+      <li><strong>Security &mdash; OAuth 2.0:</strong> integrated 3 OAuth providers (Google, Microsoft, Meta WhatsApp
+        Business) with <span class="nw">per-tenant</span> configuration, signed state parameters for CSRF protection,
+        and encrypted token storage at rest.</li>
+      <li><strong>Data Privacy:</strong> designed a token-based public sharing flow whose unauthenticated REST endpoint
+        returns only explicitly whitelisted fields, preventing PII exposure.</li>
+      <li><strong>Problem Solving:</strong> implemented a text-matching module that maps free-text requirement descriptions
+        to trainer competencies, covered by unit tests, plus profile-strength scoring that flags incomplete records.</li>
+      <li><strong>Workflows &amp; Audit Trail:</strong> built versioned document upload with mandatory change-reason capture
+        and revision history, and a task module (assignment, status transitions, due dates) with a full audit trail.</li>
+      <li><strong>Database Design:</strong> modeled PostgreSQL tables with JSONB and GIN indexing, evolved via Flyway
+        migrations.</li>
+      <li><strong>Frontend:</strong> architected the app-wide design system (144 design tokens, 8 UI primitives, 50+ React
+        components) and migrated the Trainer, Vendor, and Client modules onto it with zero API-contract regressions.</li>
+    </ul>
+  </div>
+
+  <div class="proj">
+    <div class="row"><span><strong>Timesheet Management Application</strong> &nbsp;<span class="stack">React, Redux, Node.js, Express.js, PostgreSQL</span></span><span class="sub">June 2025 &ndash; Nov 2025</span></div>
+    <ul>
+      <li>Built a full-stack app to track employee work hours and project tasks: REST APIs for timesheet submission,
+        approval, and reporting over PostgreSQL, with role-based access control for employees and managers.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <div class="row"><span class="org">Rajarajeswari College of Engineering</span><span>Bengaluru, India</span></div>
+  <div class="row sub"><span>B.E. in Electronics &amp; Communication Engineering (ECE); CGPA: 8.15</span><span>2021 &ndash; 2025</span></div>
+  <div class="row edu"><span><strong>Vidyavahini PU College</strong>, Bengaluru &mdash; <em>PUC (PCMB); 84%</em></span><span class="sub">2018 &ndash; 2020</span></div>
+  <div class="row edu"><span><strong>Manjushree English School</strong>, Bengaluru &mdash; <em>Class X, Karnataka State Board; 83%</em></span><span class="sub">2018</span></div>
+</section>
+
+<section>
+  <h2>Certifications</h2>
+  <div class="row"><span><strong>Full Stack Development</strong> &mdash; KodNest</span><span class="sub">July 2025</span></div>
+  <div class="row"><span><strong>Claude 101</strong> &mdash; Anthropic</span><span class="sub">March 2026</span></div>
+</section>
+
+</body>
+</html>

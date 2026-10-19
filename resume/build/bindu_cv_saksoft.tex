@@ -1,0 +1,130 @@
+\documentclass[a4paper,10pt]{article}
+
+% Tailored for Saksoft -- "Java programming" (0-2 yrs; Java + OOP required;
+% data structures / C++ / problem-solving a plus; ECE a preferred stream).
+% Content mirrors bindu_cv_saksoft.html, which is what bindu_cv_saksoft.pdf is
+% rendered from (headless Chrome). Keep the two in sync and keep it to ONE page.
+
+% ---------- packages ----------
+\usepackage[left=0.55in,right=0.55in,top=0.45in,bottom=0.45in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{navy}{RGB}{25,45,90}
+
+% ---------- section style ----------
+\titleformat{\section}
+  {\large\scshape\color{navy}}{}{0em}{}[\vspace{-7pt}\rule{\textwidth}{0.6pt}]
+\titlespacing{\section}{0pt}{7pt}{3pt}
+
+\setlist[itemize]{leftmargin=1.15em, itemsep=1pt, parsep=0pt, topsep=2pt}
+
+\pagenumbering{gobble}
+\setlength{\parindent}{0pt}
+
+% ---------- helpers ----------
+\newcommand{\heading}[2]{\textbf{#1}\hfill #2\\[1pt]}
+\newcommand{\subheading}[2]{\textit{#1}\hfill \textit{#2}\\[1pt]}
+
+\begin{document}
+
+% ================= HEADER =================
+\begin{center}
+  {\Huge\scshape\color{navy} Bindu J}\\[5pt]
+  \small
+  \href{mailto:binduj2003j@gmail.com}{binduj2003j@gmail.com} \ $|$ \
+  +91 9019264330 \ $|$ \
+  \href{https://www.linkedin.com/in/bindujagannath}{linkedin.com/in/bindujagannath} \ $|$ \
+  \href{https://github.com/Bindu030103}{github.com/Bindu030103}\\[3pt]
+  {\color{navy}\textit{Java Developer \ $\cdot$ \ Core Java \& OOP \ $\cdot$ \ Spring Boot \ $\cdot$ \
+  REST APIs \ $\cdot$ \ SQL}}
+\end{center}
+
+% ================= SUMMARY =================
+\section{Professional Summary}
+Java Developer with \textbf{1+ year of full-time experience} building production features in
+\textbf{Java 17, Spring Boot 3, JPA/Hibernate, and PostgreSQL} on a multi-tenant SaaS platform.
+Strong foundation in \textbf{Core Java and Object-Oriented Programming} (encapsulation,
+inheritance, polymorphism, abstraction), applied in layered Spring Boot code, with data structures and
+problem-solving fundamentals. \textbf{2025 B.E. graduate in Electronics \& Communication Engineering
+(ECE)}; a clear communicator, team player, and eager learner.
+
+% ================= SKILLS =================
+\section{Technical Skills}
+\begin{itemize}
+  \item \textbf{Programming Languages:} Java 17 (Core Java), C++ (Basics), SQL
+  \item \textbf{Core Java \& OOP:} Classes \& Objects, Encapsulation, Inheritance, Polymorphism,
+        Abstraction, Interfaces \& Abstract Classes, Collections Framework, Exception Handling
+  \item \textbf{Data Structures \& Problem Solving:} Arrays, Strings
+  \item \textbf{Java Backend:} Spring Boot 3, REST APIs, Spring Data JPA/Hibernate, Spring Security,
+        OAuth 2.0, JWT, Maven
+  \item \textbf{Database:} PostgreSQL
+  \item \textbf{Soft Skills:} Communication, Presentation, Teamwork, Professional Attitude,
+        Willingness to Learn
+  \item \textbf{Languages Spoken:} English, Kannada, Telugu
+\end{itemize}
+
+% ================= EXPERIENCE =================
+\section{Professional Experience}
+
+\heading{ProBits Technology Pvt Ltd}{Bengaluru, India}
+\subheading{Associate Software Developer}{June 2025 -- Present}
+\begin{itemize}
+  \item Full-stack developer on Savoira: built \textbf{Java 17 / Spring Boot 3} REST APIs, business
+        logic, and \textbf{JPA/Hibernate} persistence over PostgreSQL, plus React UIs --- owning
+        features from requirements through production release.
+  \item Collaborated in an \textbf{Agile/Scrum} team through sprint planning, code reviews, and pair
+        programming with senior developers; delivered work via Git feature branches and pull requests.
+\end{itemize}
+
+\vspace{4pt}
+\textbf{Savoira --- Multi-Tenant SaaS Platform} \hfill \textit{Dec 2025 -- Present}\\[1pt]
+{\small\textit{Java 17, Spring Boot 3, Spring Security, Spring Data JPA/Hibernate, PostgreSQL, Flyway,
+OAuth 2.0, JWT, React 18, Redux}}
+\begin{itemize}
+  \item \textbf{REST APIs \& Reporting:} built \textbf{17 Spring Boot REST endpoints} powering 8 report
+        sections across 2 analytics dashboards with KPI-to-record drill-down; wrote a reusable
+        \texttt{DateRangeResolver} for all report filters.
+  \item \textbf{Security --- OAuth 2.0:} integrated 3 OAuth providers (Google, Microsoft, Meta WhatsApp
+        Business) with per-tenant configuration, signed state parameters for CSRF protection, and
+        encrypted token storage at rest.
+  \item \textbf{Data Privacy:} designed a token-based public sharing flow whose unauthenticated REST
+        endpoint returns only explicitly whitelisted fields, preventing PII exposure.
+  \item \textbf{Problem Solving:} implemented a text-matching module that maps free-text requirement
+        descriptions to trainer competencies, covered by unit tests, plus profile-strength scoring
+        that flags incomplete records.
+  \item \textbf{Workflows \& Audit Trail:} built versioned document upload with mandatory
+        change-reason capture and revision history, and a task module (assignment, status
+        transitions, due dates) with a full audit trail.
+  \item \textbf{Database Design:} modeled PostgreSQL tables with JSONB and GIN indexing, evolved via
+        Flyway migrations.
+  \item \textbf{Frontend:} architected the app-wide design system (144 design tokens, 8 UI primitives,
+        50+ React components) and migrated the Trainer, Vendor, and Client modules onto it with zero
+        API-contract regressions.
+\end{itemize}
+
+\vspace{4pt}
+\textbf{Timesheet Management Application} \ {\small\textit{React, Redux, Node.js, Express.js, PostgreSQL}}
+\hfill \textit{June 2025 -- Nov 2025}
+\begin{itemize}
+  \item Built a full-stack app to track employee work hours and project tasks: REST APIs for timesheet
+        submission, approval, and reporting over PostgreSQL, with role-based access control for
+        employees and managers.
+\end{itemize}
+
+% ================= EDUCATION =================
+\section{Education}
+\heading{Rajarajeswari College of Engineering}{Bengaluru, India}
+\subheading{B.E. in Electronics \& Communication Engineering (ECE); CGPA: 8.15}{2021 -- 2025}
+\textbf{Vidyavahini PU College}, Bengaluru --- \textit{PUC (PCMB); 84\%} \hfill \textit{2018 -- 2020}\\[1pt]
+\textbf{Manjushree English School}, Bengaluru --- \textit{Class X, Karnataka State Board; 83\%}
+\hfill \textit{2018}
+
+% ================= CERTIFICATIONS =================
+\section{Certifications}
+\textbf{Full Stack Development} --- KodNest \hfill \textit{July 2025}\\[2pt]
+\textbf{Claude 101} --- Anthropic \hfill \textit{March 2026}
+
+\end{document}

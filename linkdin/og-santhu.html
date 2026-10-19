@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>OG card — santhu.site</title>
+<style>
+  /* 1200 x 630 — the standard og:image / social card size.
+     Displayed ~240px wide inside a LinkedIn Featured card, so the type is
+     deliberately oversized and the code block is texture, not reading matter. */
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    width: 1200px; height: 630px; overflow: hidden;
+    background: #08090d;
+    font-family: "Segoe UI", "Inter", system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .card {
+    position: relative;
+    width: 1200px; height: 630px;
+    background:
+      radial-gradient(760px 520px at 76% 22%, rgba(59,110,246,0.30) 0%, rgba(59,110,246,0) 64%),
+      radial-gradient(620px 420px at 6% 96%, rgba(59,110,246,0.12) 0%, rgba(59,110,246,0) 62%),
+      linear-gradient(140deg, #08090d 0%, #0b0d14 55%, #0e1220 100%);
+    overflow: hidden;
+  }
+
+  .grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(to right,  rgba(255,255,255,0.038) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.038) 1px, transparent 1px);
+    background-size: 52px 52px;
+    mask-image: linear-gradient(120deg, transparent 0%, #000 42%, #000 100%);
+    -webkit-mask-image: linear-gradient(120deg, transparent 0%, #000 42%, #000 100%);
+  }
+
+  .left {
+    position: absolute;
+    left: 74px; top: 112px;
+    width: 640px;
+  }
+
+  .eyebrow {
+    font-family: "Cascadia Code", "Consolas", "Courier New", monospace;
+    font-size: 21px; font-weight: 600;
+    letter-spacing: 2.2px;
+    color: #4a7cf7;
+    margin-bottom: 26px;
+  }
+
+  h1 {
+    font-size: 132px; line-height: 0.94;
+    font-weight: 800; letter-spacing: -4.5px;
+    color: #ffffff;
+  }
+  h1 .dot { color: #3b6ef6; }
+
+  .tagline {
+    margin-top: 26px;
+    font-size: 35px; line-height: 1.32;
+    font-weight: 500;
+    color: #9aa3b5;
+    letter-spacing: -0.4px;
+  }
+
+  .stack {
+    position: absolute;
+    left: 74px; bottom: 112px;
+    font-size: 24px; font-weight: 600;
+    color: #c3ccdd; letter-spacing: 0.4px;
+  }
+  .stack .sep { color: #3f4a63; padding: 0 12px; }
+
+  .url {
+    position: absolute;
+    left: 74px; bottom: 56px;
+    font-family: "Cascadia Code", "Consolas", "Courier New", monospace;
+    font-size: 27px; font-weight: 700;
+    color: #4a7cf7; letter-spacing: 0.5px;
+  }
+
+  /* editor card, mirroring the santo.ts block on the live site */
+  .editor {
+    position: absolute;
+    right: 60px; top: 150px;
+    width: 456px;
+    background: #101218;
+    border: 1px solid #1e2330;
+    border-radius: 14px;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.55);
+    overflow: hidden;
+  }
+  .bar {
+    display: flex; align-items: center; gap: 8px;
+    padding: 13px 16px;
+    border-bottom: 1px solid #1e2330;
+    background: #0d0f15;
+  }
+  .bar i { width: 11px; height: 11px; border-radius: 50%; display: block; }
+  .r { background: #ff5f57; } .y { background: #febc2e; } .g { background: #28c840; }
+  .bar span {
+    font-family: "Cascadia Code", "Consolas", monospace;
+    font-size: 15px; color: #6b7487; margin-left: 9px;
+  }
+  .code {
+    padding: 20px 20px 24px;
+    font-family: "Cascadia Code", "Consolas", "Courier New", monospace;
+    font-size: 17px; line-height: 1.72;
+    color: #d5dbe8;
+    white-space: nowrap;   /* a wrapped line stops reading as code */
+  }
+  .kw  { color: #8b7cf6; }
+  .var { color: #7fb0ff; }
+  .key { color: #7fd3ff; }
+  .str { color: #f0956c; }
+  .cmt { color: #5a6376; font-style: italic; }
+  .pun { color: #8892a6; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="grid"></div>
+
+  <div class="left">
+    <div class="eyebrow">&gt; PORTFOLIO</div>
+    <h1>Santo<span class="dot">.</span></h1>
+    <div class="tagline">Full-Stack Developer building<br>systems that ship.</div>
+  </div>
+
+  <div class="editor">
+    <div class="bar">
+      <i class="r"></i><i class="y"></i><i class="g"></i><span>santo.ts</span>
+    </div>
+    <div class="code">
+<span class="kw">const</span> <span class="var">santo</span> <span class="pun">=</span> <span class="pun">{</span><br>
+&nbsp;&nbsp;<span class="key">role</span><span class="pun">:</span> <span class="str">"Full-Stack Developer"</span><span class="pun">,</span><br>
+&nbsp;&nbsp;<span class="key">stack</span><span class="pun">:</span> <span class="pun">[</span><span class="str">"React"</span><span class="pun">,</span> <span class="str">"Node.js"</span><span class="pun">,</span> <span class="str">"SQL"</span><span class="pun">]</span><span class="pun">,</span><br>
+&nbsp;&nbsp;<span class="key">shipped</span><span class="pun">:</span> <span class="str">"Habex"</span><span class="pun">,</span><br>
+<span class="pun">};</span><br><br>
+<span class="cmt">// Let's build something great.</span>
+    </div>
+  </div>
+
+  <div class="stack">
+    React<span class="sep">&middot;</span>TypeScript<span class="sep">&middot;</span>Node.js<span class="sep">&middot;</span>PostgreSQL
+  </div>
+  <div class="url">santhu.site</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,131 @@
+\documentclass[a4paper,11pt]{article}
+
+% Packages
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{fontawesome}
+\usepackage{xcolor}
+\usepackage{tabularx}
+
+% Page margins
+\geometry{left=0.65in, right=0.65in, top=0.75in, bottom=0.75in}
+
+% Colors
+\definecolor{primary}{RGB}{70, 130, 180}
+\definecolor{accent}{RGB}{0, 0, 0}
+
+% Section formatting
+\titleformat{\section}{\Large\bfseries\color{primary}}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{12pt}{6pt}
+
+% Bullet customization
+\setlist[itemize]{leftmargin=*}
+
+% Remove page numbers
+\pagenumbering{gobble}
+
+% Custom commands
+\newcommand{\entry}[4]{
+    \noindent\textbf{\textcolor{primary}{#1}} \hfill \textit{#2} \\
+    \textcolor{gray}{#3} \hfill #4 \\
+}
+
+\newcommand{\contactinfo}[3]{
+    \begin{center}
+        \textbf{\Large {#1}} \\
+        \vspace{3pt}
+        {#2} $\diamond$ {#3}
+    \end{center}
+}
+
+\begin{document}
+
+% Header
+\contactinfo{SANTHOSH R}{8550038177}{Santhosh.1si20ei026@gmail.com}
+
+% Education
+\section{EDUCATION}
+\entry{Siddaganga Institute of Technology, Tumkur}{Dec 2020 -- Present}{BE in Electronics and Instrumentation Engineering}{CGPA: 8.94}
+\vspace{2pt}
+\entry{Vidyavahini PU College}{May 2018 -- July 2020}{Pre-University Examinations (PCMB)}{88.56\%}
+\vspace{2pt}
+\entry{Vivekananda Vidya Mandira School}{May 2017 -- May 2018}{Class X}{78.64\%}
+
+% Work Experience
+\section{WORK EXPERIENCE}
+\noindent\textbf{\textcolor{primary}{GET (Frontend Development)}} \hfill \textbf{08/2024 - 05/2025} \\
+\textcolor{gray}{Delta Electronics India, Bengaluru, Karnataka} 
+\begin{itemize}
+    \item Developed the frontend of a \textbf{customer-facing PDU (Power Distribution Unit) touch panel} using \textbf{React and Typescript}, ensuring responsiveness across different screen sizes.
+    \item Used modern UIs based on \textbf{Figma} designs, contributing to a complete overhaul from an outdated layout to a clean, user-friendly interface.
+    \item Built modular, reusable components with strong emphasis on scalability and maintainability.
+    \item Managed application-wide state using \textbf{Redux}, ensuring seamless data flow and user interaction.
+    \item Closely followed design specifications while collaborating with UI/UX references from Figma to match real-world hardware constraints.
+\end{itemize}
+
+\noindent\textbf{\textcolor{primary}{SDE INTERN}} \hfill \textbf{01/2024 - 07/2024} \\
+\textcolor{gray}{Delta Electronics India, Bengaluru, Karnataka} \\
+\begin{itemize}
+    \item Gained foundational knowledge in \textbf{CAN, Modbus, and I2C protocols}, while working on documentation and understanding their application in industrial hardware systems; also explored \textbf{Linux CLI tools}, and version control using \textbf{GitLab}.
+    \item Contributed to improving UI/UX of PDU by modifying design mockups in \textbf{Figma}, and strengthened practical understanding of software development workflows in embedded environments.
+\end{itemize}
+
+% Projects
+\section{PROJECTS}
+\textbf{Food Recipe Finder Web App} \hfill \textit{\href{https://react-food-app-2024-63519.web.app/}{\textcolor{blue}{Live Demo}}} \\
+\textit{React.js, CSS, Firebase, SpoonacularAPI, LocalStorage, SweetAlert2} \\
+Developed a responsive, theme-aware web app for searching and saving food recipes using the Spoonacular API. Implemented \textbf{search with live API calls}, \textbf{favorites system with localStorage}, and \textbf{filter functionality with useReducer}. Designed a user-friendly interface with \textbf{conditional rendering}, loading states, and smooth UI feedback.
+\vspace{8pt}
+
+\textbf{Precision Drug Delivery System} \hfill \textit{Team-4, Arduino uno-3} \\
+The drug delivery system is a small infusion pump used for the controlled administration of small amounts of drugs or medications to a patient or for use in chemical or biomedical research. Some newer infusion pumps are often called smart pumps.
+\vspace{8pt}
+
+\textbf{Smart Irrigation System} \hfill \textit{Team-2, Pic-18} \\
+A smart irrigation system is a technology-driven solution designed to optimize the watering of plants, crops, and lawns. We utilized advanced technology to optimize water usage and enhance agricultural efficiency.
+
+% Activities
+\section{ACTIVITIES}
+\textbf{Hack-o-Smart}, Tumkur Smart City Hackathon
+\begin{itemize}
+    \item A 24-hour hackathon, where we developed a centralized education platform monitored at a district level having access to seat availability, fee details etc.
+\end{itemize}
+
+\textbf{NCC Cadet-Rank Holder in NCC}, 4KarTumkur Battalion
+\begin{itemize}
+    \item Participated in various NCC-initiated community service projects, contributing to social welfare, and underscoring a commitment to giving back to society.
+    \item Learnt to play Bugle while practicing for the Annual Graduation Day Procession at SIT.
+    \item Learnt a lot about army life, discipline, firing, Leadership skills, Problem-solving, and many more.
+\end{itemize}
+
+% Skills
+\section{SKILLS}
+\begin{itemize}
+    \item \textbf{Programming \& Languages:} C, C++, Python, JavaScript
+    \item \textbf{Front-End Development:} React.js, React Router, Redux, Context API, Tailwind CSS
+    \item \textbf{Back-End \& APIs:} RESTful APIs, GraphQL, Axios, Fetch API, Postman
+    \item \textbf{Web Server:} nginx
+    \item \textbf{Authentication:} Clerk, Firebase Auth
+    \item \textbf{DevOps \& Deployment:} Firebase Hosting, Vercel Deployment, Git \& GitLab, Postman
+    \item \textbf{Mobile Development:} React Native CLI \& Expo
+    \item \textbf{UI/UX Design:} Figma tool
+    \item \textbf{Database:} MySQL, MongoDB, PostgreSQL (Supabase)
+    \item \textbf{Microcontrollers \& Hardware:} 8051 Microcontroller, MATLAB (Simulation \& Analysis), Troubleshooting \& Embedded System Design
+\end{itemize}
+
+% Hobbies
+\section{HOBBIES}
+\begin{tabularx}{\textwidth}{X X X X}
+    Traveling & Drawing & Designing and editing & Photography \\
+\end{tabularx}
+
+% Certificates
+\section{CERTIFICATES}
+\begin{itemize}
+    \item SQL completion in Code Chef Platform
+    \item Digital skill certificate in Hacker Rank Platform
+\end{itemize}
+
+\end{document}

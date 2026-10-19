@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Santhosh R — Resume</title>
+<style>
+  @page { size: A4; margin: 0.4in 0.5in; }
+
+  :root {
+    --primary: #34688f;
+    --ink: #111;
+    --muted: #555;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Charter", "Georgia", "Cambria", serif;
+    font-size: 9.5pt;
+    line-height: 1.25;
+    color: var(--ink);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  a { color: #1a5fb4; text-decoration: none; }
+
+  /* ---- Header ---- */
+  header { text-align: center; margin-bottom: 4px; }
+  h1 {
+    font-size: 18pt;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    margin: 0 0 3px;
+  }
+  .contact { font-size: 9.4pt; margin-bottom: 2px; }
+  .contact .sep { color: #999; padding: 0 5px; }
+  .tagline {
+    font-size: 9.2pt;
+    font-style: italic;
+    color: var(--muted);
+    margin-top: 3px;
+  }
+
+  /* ---- Sections ---- */
+  h2 {
+    font-size: 11.2pt;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 6px 0 3px;
+    padding-bottom: 1.5px;
+    border-bottom: 1px solid var(--primary);
+    letter-spacing: 0.4px;
+    break-after: avoid;
+  }
+
+  p { margin: 0 0 4px; }
+
+  ul {
+    margin: 3px 0 0;
+    padding-left: 15px;
+  }
+  li { margin-bottom: 1.5px; }
+
+  strong { font-weight: 700; }
+
+  /* ---- Roles ---- */
+  .role {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 6px;
+    break-after: avoid;
+  }
+  .role:first-of-type { margin-top: 2px; }
+  .role-title { font-weight: 700; color: var(--primary); font-size: 10.6pt; }
+  .role-date { font-weight: 700; font-size: 9.6pt; white-space: nowrap; }
+  .role-org { color: var(--muted); font-size: 9.6pt; margin-bottom: 1px; }
+
+  .entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .entry > :last-child { white-space: nowrap; flex-shrink: 0; }
+  .entry-sub { color: var(--muted); font-size: 9.6pt; }
+
+  .proj { margin-bottom: 6px; break-inside: avoid; }
+  .proj-stack { font-style: italic; color: var(--muted); font-size: 9.5pt; }
+
+  section { break-inside: auto; }
+  section.page2 { break-before: page; }
+  .keep { break-inside: avoid; }
+  code {
+    font-family: "Consolas", "DejaVu Sans Mono", monospace;
+    font-size: 9.2pt;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>SANTHOSH R</h1>
+  <div class="contact">
+    Bengaluru, Karnataka <span class="sep">&#9670;</span> 8550038177
+    <span class="sep">&#9670;</span>
+    <a href="mailto:santhosh.dev.6704@gmail.com">santhosh.dev.6704@gmail.com</a>
+  </div>
+  <div class="contact">
+    Portfolio: <a href="https://santhu.site">santhu.site</a>
+    <span class="sep">&#9670;</span>
+    <a href="https://github.com/Santhu32144">github.com/Santhu32144</a>
+    <span class="sep">&#9670;</span>
+    <a href="https://www.linkedin.com/in/santhosh-r-64259b3b0">linkedin.com/in/santhosh-r-64259b3b0</a>
+  </div>
+  <div class="tagline">
+    Full Stack Engineer &#9670; React + TypeScript &#9670; Node.js &#9670; Embedded Linux &#9670; Industrial IoT &amp; Real-Time Systems
+  </div>
+</header>
+
+<section>
+  <h2>SUMMARY</h2>
+  <p>
+    Full stack engineer, 2.5+ years building software for <strong>industrial automation
+    hardware</strong> &mdash; a <strong>React + TypeScript</strong> operator UI and
+    <strong>Node.js/Express</strong> backend shipped on customer-facing power distribution units.
+    Works across the stack and down to the device: real-time telemetry over
+    <strong>Socket.IO</strong>, <strong>JWT</strong> auth with role-based access,
+    <strong>Modbus / CAN</strong> field protocols, and <strong>embedded ARM Linux</strong> &mdash;
+    from the Yocto-built OS image to systemd and nginx deployment.
+  </p>
+</section>
+
+<section>
+  <h2>SKILLS</h2>
+  <ul>
+    <li><strong>Languages:</strong> TypeScript, JavaScript (ES6+), Python, Kotlin, C, C++, SQL</li>
+    <li><strong>Frontend &amp; Mobile:</strong> React 18/19, Redux Toolkit, Zustand, React Router, Tailwind CSS, Recharts, Vite, React Native CLI</li>
+    <li><strong>Backend:</strong> Node.js, Express 5, REST API design, Socket.IO / WebSockets, JWT (access + refresh), RBAC, Swagger/OpenAPI, Winston</li>
+    <li><strong>Python:</strong> FastAPI, Flask, SQLAlchemy, Pydantic, Selenium, Tkinter, pandas / scikit-learn (gradient-boosted models), Docker &amp; PyInstaller packaging</li>
+    <li><strong>Databases &amp; Architecture:</strong> SQLite, Firebase/Firestore + security rules, PostgreSQL (Supabase, migrations, RLS), MySQL, MongoDB; system design, real-time data pipelines, API contract design</li>
+    <li><strong>Embedded Linux:</strong> Yocto Project (Kirkstone), BitBake, devtool, U-Boot, kernel config, device tree, NXP i.MX8M Plus</li>
+    <li><strong>Linux &amp; DevOps:</strong> Ubuntu and embedded ARM Linux, Bash scripting, systemd units, nginx (reverse proxy + static hosting), udev automount, journald, Git, GitLab, Jest, <code>pkg</code> (ARM64 binaries), Vercel, Postman</li>
+    <li><strong>Domain:</strong> Industrial IoT and automation, CAN / Modbus / I2C fieldbus, embedded Linux HMI &amp; touch panels, real-time device telemetry, edge-to-cloud data flow</li>
+  </ul>
+</section>
+
+<section>
+  <h2>WORK EXPERIENCE</h2>
+
+  <div class="role">
+    <span class="role-title">Senior Software Engineer &mdash; Full Stack</span>
+    <span class="role-date">06/2025 &ndash; Present</span>
+  </div>
+  <div class="role-org">Delta Electronics India, Bengaluru</div>
+  <ul>
+    <li>Sole developer of the <strong>PDU Gen-3 platform</strong>: an embedded React touch-panel UI,
+      a <strong>Vite + React + Tailwind</strong> admin configurator, and a Node.js/Express
+      microservice &mdash; shipped on customer-facing Power Distribution Units.</li>
+    <li>Designed and built the backend from scratch in <strong>TypeScript</strong>: 17 route modules
+      covering measurement, alarms, calibration, event/data logs, configuration, user management and
+      system control, documented with <strong>Swagger/OpenAPI</strong>.</li>
+    <li>Implemented <strong>JWT authentication</strong> with short-lived access tokens and httpOnly
+      refresh cookies, plus <strong>role-based access control</strong> where permissions are
+      re-resolved on every refresh so revocation applies instantly to live sessions.</li>
+    <li>Built a <strong>real-time energy sampler</strong> that runs independently of the UI &mdash;
+      samples power every 5s into a rolling one-hour window and mirrors it to disk, so data collection
+      never pauses on navigation and survives a backend restart.</li>
+    <li>Replaced per-page config fetching with a <strong>boot-time bootstrap and API self-test</strong>,
+      surfacing a live &ldquo;backend disconnected&rdquo; indicator by reusing the existing Socket.IO
+      signal &mdash; no extra heartbeat endpoint needed.</li>
+    <li>Automated device deployment with a <strong>Bash self-extracting installer</strong> that
+      ships the packaged <strong>ARM64 Linux binary</strong> and both web builds, provisions
+      <strong>systemd</strong> units and an <strong>nginx</strong> reverse proxy, and configures
+      <strong>udev</strong>-driven USB automount &mdash; with versioned OTA updates and rollback
+      backups.</li>
+    <li>Added structured <strong>journald</strong> logging, USB import/export and DB backup/restore
+      for field servicing.</li>
+    <li>Customised and built the PDU's <strong>embedded Linux OS</strong> with the
+      <strong>Yocto Project</strong> on an <strong>NXP i.MX8M Plus</strong>: <strong>U-Boot</strong>
+      and kernel changes via <code>devtool</code> (device tree, boot config, HDMI/UART drivers)
+      plus custom <code>meta-delta</code> recipes.</li>
+    <li>Fixed a displaced, flickering boot splash: HDMI negotiated 1920&times;1080 on a
+      1280&times;800 panel, and a stale <strong>U-Boot environment</strong> in eMMC survived every
+      reflash &mdash; so forced the mode in the kernel command line instead.</li>
+    <li>Found kernel config edits were silently dropped: <strong>BitBake</strong> hashed the
+      fragment's path, not its contents, so sstate reused a stale kernel and builds
+      &ldquo;passed&rdquo; having rebuilt nothing. Routed it through <code>SRC_URI</code> so changes
+      reach the image.</li>
+    <li>Restored GPIO on the <strong>FT260</strong> USB-to-I2C/UART bridge, whose shared pins the
+      UART re-claimed at an unpredictable point after boot; with the driver a prebuilt module,
+      shipped a <strong>systemd</strong> guard service as a new Yocto recipe.</li>
+  </ul>
+
+  <div class="role">
+    <span class="role-title">Graduate Engineer Trainee &mdash; Frontend</span>
+    <span class="role-date">08/2024 &ndash; 05/2025</span>
+  </div>
+  <div class="role-org">Delta Electronics India, Bengaluru</div>
+  <ul>
+    <li>Built the frontend of a customer-facing <strong>PDU touch panel</strong> in
+      <strong>React and TypeScript</strong>, overhauling a legacy layout into a responsive
+      interface: architected state with <strong>Redux</strong> and built a reusable component
+      library from <strong>Figma</strong> designs, within hardware constraints (fixed resolution,
+      touch-only input, custom on-screen keyboard).</li>
+  </ul>
+
+  <div class="role">
+    <span class="role-title">Software Engineer Intern</span>
+    <span class="role-date">01/2024 &ndash; 07/2024</span>
+  </div>
+  <div class="role-org">Delta Electronics India, Bengaluru</div>
+  <ul>
+    <li>Worked with <strong>CAN, Modbus and I2C</strong> protocols in industrial hardware; gained
+      exposure to <strong>Linux CLI</strong> tooling and <strong>GitLab</strong>, and reworked PDU
+      UI/UX mockups in <strong>Figma</strong>.</li>
+  </ul>
+</section>
+
+<section class="page2">
+  <h2>PROJECTS</h2>
+
+  <div class="proj">
+    <div class="entry">
+      <span><strong>Jourvia &mdash; Group Travel Companion App</strong> &nbsp;<span class="proj-stack">React Native 0.85, TypeScript, Zustand, Firebase, Kotlin</span></span>
+      <span class="proj-stack">Android &middot; v1.0.2</span>
+    </div>
+    <ul>
+      <li>Trip planner for groups on the bare <strong>React Native CLI</strong> (New Architecture, no Expo), ~36k lines of
+        TypeScript: routes parsed from a Google Maps link (geocoded, real road distance via OSRM, weather
+        per stop), friends, 1-to-1 chat with voice notes, packing lists, expense splitting that settles
+        up in the fewest payments, and a hold-to-trigger SOS.</li>
+      <li>Built a <strong>live trip mode</strong>: GPS auto check-in at each stop (300 m radius, 2-min
+        dwell, auto-skip, ETAs) running in an <strong>Android foreground service</strong>, plus live
+        location sharing and arrival alerts for companions; check-ins are saved on-device first, then synced.</li>
+      <li>Wrote native <strong>Kotlin</strong> modules &mdash; 5 home-screen widgets and a voice
+        recorder &mdash; and a type-safe <strong>i18n engine</strong> covering English and 9 Indian
+        languages with plurals and fallback.</li>
+      <li>Owner / editor / member access in deny-by-default <strong>Firestore security rules</strong>;
+        stale-while-revalidate caching over <strong>Zustand</strong> stores so trips load instantly and
+        stay readable offline; 65 <strong>Jest</strong> tests and a <strong>GitHub Actions</strong>
+        pipeline (typecheck, lint, test &rarr; signed release APK on version tags).</li>
+    </ul>
+  </div>
+
+  <div class="proj">
+    <div class="entry">
+      <span><strong>LocalClaude &mdash; Design Board</strong> &nbsp;<span class="proj-stack">Electron, React, TypeScript, Claude Agent SDK</span></span>
+      <span class="proj-stack"><a href="https://github.com/partham20/localclaude">Open source</a> &middot; <a href="https://github.com/partham20/localclaude/pulls?q=is%3Apr+author%3ASanthu32144">2 merged PRs</a></span>
+    </div>
+    <ul>
+      <li>Built the <strong>Design</strong> feature of an open-source Claude desktop app (~3.3k lines):
+        describe a prototype, slide deck, wireframe or one-pager, and Claude lays it out as frames on an
+        <strong>infinite canvas</strong> beside the chat &mdash; pan, pinch-zoom, marquee multi-select,
+        present mode, version switching and click-to-comment revisions.</li>
+      <li>Frames render live via a <strong>streaming partial-JSON parser</strong> that reads tool-call
+        input mid-stream; multi-screen designs get a design system first, then fan out to up to 8
+        <strong>parallel subagents</strong>, one per screen.</li>
+      <li>Added PNG (2&times;), PDF and HTML export (a whole deck as one PDF) rendered in a hidden,
+        sandboxed window; sped up session startup by skipping MCP servers, Chrome and computer use;
+        added unit and end-to-end tests.</li>
+    </ul>
+  </div>
+
+  <div class="proj">
+    <div class="entry">
+      <span><strong>Habex &mdash; Expense, Habit &amp; Investment Tracker</strong> &nbsp;<span class="proj-stack">React, TypeScript, Supabase (Postgres), shadcn/ui, Tailwind</span></span>
+      <span class="proj-stack"><a href="https://habex.santhu.site">habex.santhu.site</a> &middot; <a href="https://github.com/ZenblockLabs/exphabbits">GitHub</a></span>
+    </div>
+    <ul>
+      <li>Live personal-finance app on my own domain: expense entry with recurring rules and
+        monthly views, habit tracking with a 21-day challenge, shared investment groups, and an
+        admin dashboard.</li>
+      <li>Backed by <strong>Supabase Postgres</strong> with 12 versioned <strong>SQL
+        migrations</strong> and three <strong>edge functions</strong> (PIN login, admin user
+        management, activity audit) keeping privileged operations off the client.</li>
+    </ul>
+  </div>
+
+  <div class="proj">
+    <div class="entry">
+      <span><strong>FraudShield &mdash; Accounts-Payable Fraud Detection API</strong> &nbsp;<span class="proj-stack">Python, FastAPI, SQLAlchemy, Pydantic</span></span>
+    </div>
+    <ul>
+      <li>REST service that scores supplier invoices for fraud risk, with reviewer and admin
+        workflows and auto-generated <strong>OpenAPI</strong> docs.</li>
+      <li>Built a configurable <strong>rules engine</strong> &mdash; amount thresholds, per-vendor
+        invoice velocity over a rolling window, and repeated round-amount detection &mdash; feeding
+        a scoring service; paired with a <strong>gradient-boosted</strong> model trained on a
+        labelled fraud dataset.</li>
+    </ul>
+  </div>
+
+  <div class="proj">
+    <div class="entry">
+      <span><strong>Time Tracker &mdash; Desktop Work-Hour Automation</strong> &nbsp;<span class="proj-stack">Python, Tkinter, Selenium, PyInstaller</span></span>
+    </div>
+    <ul>
+      <li>Desktop app that automates weekly timesheet entry: drives an attendance portal with
+        <strong>Selenium</strong>, paging week by week and waiting on the rendered date before
+        scraping each day's records rather than relying on fixed sleeps.</li>
+      <li>Runs scraping off the UI thread and marshals results back to Tk's main loop, coalesces
+        per-keystroke writes into one debounced save, and ships as a standalone Windows executable
+        via <strong>PyInstaller</strong>.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="keep">
+  <h2>EDUCATION</h2>
+  <div class="entry">
+    <span><span class="role-title">Siddaganga Institute of Technology</span>
+      <span class="entry-sub">&mdash; B.E. Electronics &amp; Instrumentation, CGPA 8.94</span></span>
+    <span class="role-date">Dec 2020 &ndash; Jun 2024</span>
+  </div>
+  <div class="entry" style="margin-top:2px">
+    <span class="entry-sub"><strong>Vidyavahini PU College</strong> &mdash; Class 11 &amp; 12, Pre-University (PCMB), 88.56%</span>
+    <span class="entry-sub">May 2018 &ndash; Jul 2020</span>
+  </div>
+  <div class="entry" style="margin-top:2px">
+    <span class="entry-sub"><strong>Vivekananda Vidya Mandira School</strong> &mdash; Class X (SSLC), 78.64%</span>
+    <span class="entry-sub">May 2017 &ndash; May 2018</span>
+  </div>
+</section>
+
+<section class="keep">
+  <h2>ADDITIONAL</h2>
+  <p><strong>Hack-o-Smart</strong> &mdash; 24-hour Tumkur Smart City hackathon; built a district-level
+    education platform surfacing seat availability and fee details.
+    <span class="sep" style="color:#999">&nbsp;&#9670;&nbsp;</span>
+    <strong>Certifications:</strong> SQL (CodeChef), Digital Skills (HackerRank)
+    <span class="sep" style="color:#999">&nbsp;&#9670;&nbsp;</span>
+    <strong>Leadership:</strong> NCC Rank Holder, 4 Kar Tumkur Battalion</p>
+</section>
+
+
+</body>
+</html>

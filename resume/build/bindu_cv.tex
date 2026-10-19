@@ -1,0 +1,149 @@
+\documentclass[a4paper,10pt]{article}
+
+% ---------- packages ----------
+\usepackage[left=0.55in,right=0.55in,top=0.5in,bottom=0.5in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{navy}{RGB}{25,45,90}
+
+% ---------- section style ----------
+\titleformat{\section}
+  {\large\scshape\color{navy}}{}{0em}{}[\vspace{-7pt}\rule{\textwidth}{0.6pt}]
+\titlespacing{\section}{0pt}{8pt}{4pt}
+
+\setlist[itemize]{leftmargin=1.15em, itemsep=1.5pt, parsep=0pt, topsep=2pt}
+
+\pagenumbering{gobble}
+\setlength{\parindent}{0pt}
+
+% ---------- helpers ----------
+\newcommand{\heading}[2]{\textbf{#1}\hfill #2\\[1pt]}
+\newcommand{\subheading}[2]{\textit{#1}\hfill \textit{#2}\\[1pt]}
+
+\begin{document}
+
+% ================= HEADER =================
+\begin{center}
+  {\Huge\scshape\color{navy} Bindu J}\\[5pt]
+  \small
+  \href{mailto:binduj2003j@gmail.com}{binduj2003j@gmail.com} \ $|$ \
+  +91 9019264330 \ $|$ \
+  \href{https://www.linkedin.com/in/bindujagannath}{linkedin.com/in/bindujagannath} \ $|$ \
+  \href{https://github.com/Bindu030103}{github.com/Bindu030103}
+\end{center}
+
+% ================= SUMMARY =================
+\section{Professional Summary}
+Full-Stack Developer with 1+ year of experience delivering production features on a multi-tenant
+enterprise SaaS platform using \textbf{Java 17, Spring Boot 3, React 18, and PostgreSQL}. Owns
+features end-to-end across the SDLC --- database schema design, RESTful API development,
+OAuth 2.0 / JWT authentication, and responsive React UIs. Delivered secure multi-tenant
+third-party integrations and a design system adopted across 50+ components, working in an
+Agile/Scrum team through sprint planning, code reviews, and production releases.
+
+% ================= SKILLS =================
+\section{Technical Skills}
+\begin{itemize}
+  \item \textbf{Languages:} Java 17, JavaScript (ES6+), SQL, HTML5, CSS3
+  \item \textbf{Frontend:} React 18, Redux, React Router, Tailwind CSS, Recharts, Axios,
+        Responsive Design, Design Systems
+  \item \textbf{Backend:} Spring Boot 3, Spring Security, Spring Data JPA / Hibernate,
+        RESTful API Design, OAuth 2.0, JWT, Node.js, Express.js, OOP
+  \item \textbf{Databases:} PostgreSQL, Supabase, MySQL, JSONB, GIN Indexing,
+        Flyway Migrations, Schema Design
+  \item \textbf{Tools \& Practices:} Git, GitHub, Maven, Postman, VS Code, Figma (Basics),
+        Agile / Scrum, Code Review, SDLC, Clean Code
+  \item \textbf{Languages Spoken:} English, Kannada, Telugu
+\end{itemize}
+
+% ---------------------------------------------------------------------------
+% ADD ONLY IF YOU CAN DEFEND IT IN AN INTERVIEW. Deloitte technical rounds
+% probe the skills line directly. Uncomment what is genuinely true for you:
+%   Testing:  JUnit, Mockito, Jest, React Testing Library
+%   DevOps:   Docker, CI/CD, GitHub Actions, Jenkins
+%   Cloud:    AWS, Azure
+%   IDE:      IntelliJ IDEA
+% Deliberately NOT included: "Microservices" (Savoira is a modular monolith --
+% claiming it invites questions the codebase will not back up).
+% ---------------------------------------------------------------------------
+
+% ================= EXPERIENCE =================
+\section{Professional Experience}
+
+\heading{ProBits Technology Pvt Ltd}{Bengaluru, India}
+\subheading{Associate Software Developer}{June 2025 -- Present}
+\begin{itemize}
+  \item Full-stack development on Savoira, a multi-tenant SaaS platform, across PostgreSQL schema
+        design, Spring Boot REST APIs, and React/Redux UIs --- owning features end-to-end from
+        requirements through production release.
+  \item Redesigned the Trainer, Vendor, and Client management modules onto a shared design system,
+        migrating legacy markup with zero regressions to existing API contracts and validation;
+        built reusable cascading Country/State/City address components shared across all three forms.
+  \item Collaborated in an Agile/Scrum team through sprint planning, code reviews, and pair
+        programming; managed delivery via Git feature branches and pull requests.
+\end{itemize}
+
+\vspace{5pt}
+\textbf{Savoira} --- Multi-Tenant SaaS Platform \hfill \textit{Dec 2025 -- Present}\\[1pt]
+\textit{React 18, Redux, Tailwind CSS, Spring Boot 3, Java, JPA/Hibernate, PostgreSQL, OAuth 2.0,
+JWT, Recharts, Flyway}
+\begin{itemize}
+  \item Multi-tenant SaaS platform for training organizations managing trainers, vendors, clients,
+        work engagements, scheduling, document workflows, and delivery analytics.
+  \item \textbf{Reports \& Analytics (Full-Stack):} built 17 REST endpoints and 8 report sections
+        with 7 Recharts visualizations powering 2 multi-tenant analytics dashboards, including
+        drill-down navigation from summary KPIs to row-level records without page reload.
+  \item \textbf{OAuth 2.0 \& Third-Party Integration:} integrated 3 OAuth providers (Google,
+        Microsoft, Meta WhatsApp Business) with per-tenant configuration, signed state parameters
+        for CSRF protection, and encrypted token storage at rest --- enabling tenant-owned email
+        delivery instead of a shared SMTP account.
+  \item \textbf{Public Sharing \& Data Security (Full-Stack):} designed a token-based public
+        sharing flow with field-level disclosure control, exposing an unauthenticated REST endpoint
+        that returns only explicitly whitelisted fields to prevent PII exposure.
+  \item \textbf{Global CSS \& Design System:} architected the app-wide CSS --- 19 stylesheets,
+        144 design tokens, 8 reusable UI primitives --- adopted across 50+ components, with CSS
+        custom-property theming for light/dark and brand modes.
+  \item \textbf{Document \& Task Workflows:} built versioned document upload with mandatory
+        change-reason capture, uploader attribution, and full revision history, plus a task
+        management module (assignment, status transitions, due-date tracking) with a complete
+        audit trail on every stage change.
+  \item \textbf{Requirement Matching \& Automation:} implemented a text-matching module mapping
+        free-text requirement descriptions to trainer competencies, covered by unit tests, plus a
+        trainer CV template renderer and profile-strength scoring that surfaces incomplete
+        trainer records.
+  \item \textbf{Database Design:} modeled PostgreSQL tables using JSONB with GIN indexing, managed
+        schema evolution through Flyway migrations, and authored a reusable
+        \texttt{DateRangeResolver} shared by all report filters.
+\end{itemize}
+
+\vspace{5pt}
+\textbf{Timesheet Management Application} \hfill \textit{June 2025 -- Nov 2025}\\[1pt]
+\textit{React, Redux, Node.js, Express.js, PostgreSQL}
+\begin{itemize}
+  \item Built a full-stack application to track employee work hours and project tasks, with a
+        responsive React frontend and Redux state management.
+  \item Developed RESTful APIs in Node.js and Express for timesheet submission, approval, and
+        reporting, backed by a PostgreSQL schema covering users, projects, and timesheet records.
+  \item Implemented role-based access control separating employee and manager permissions.
+\end{itemize}
+
+% ================= EDUCATION =================
+\section{Education}
+\heading{Rajarajeswari College of Engineering}{Bengaluru, India}
+\subheading{B.E. in Electronics \& Communication; CGPA: 8.15}{2021 -- 2025}
+\vspace{3pt}
+\heading{Vidyavahini PU College}{Bengaluru, India}
+\subheading{PUC --- PCMB; 84\%}{2018 -- 2020}
+\vspace{3pt}
+\heading{Manjushree English School}{Bengaluru, India}
+\subheading{Class X, Karnataka State Board; 83\%}{2018}
+
+% ================= CERTIFICATIONS =================
+\section{Certifications}
+\textbf{Full Stack Development} --- KodNest \hfill \textit{July 2025}\\[2pt]
+\textbf{Claude 101} --- Anthropic \hfill \textit{March 2026}
+
+\end{document}

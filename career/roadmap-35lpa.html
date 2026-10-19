@@ -1,0 +1,789 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The 35 LPA Roadmap — Santhosh R</title>
+<style>
+  @page { size: A4; margin: 0.55in 0.6in 0.6in; }
+
+  :root {
+    --ink:      #16191d;
+    --body:     #2b3138;
+    --muted:    #6a737d;
+    --line:     #d9dee3;
+    --primary:  #34688f;
+    --accent:   #b5651d;
+    --wash:     #f4f6f8;
+    --good:     #1e7a4f;
+    --bad:      #b3261e;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0; padding: 0;
+    font-family: "Segoe UI", "Calibri", system-ui, sans-serif;
+    font-size: 9.6pt;
+    line-height: 1.45;
+    color: var(--body);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  a { color: var(--primary); text-decoration: none; }
+
+  h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 30pt; line-height: 1.05;
+    color: var(--ink); font-weight: 700;
+    margin: 0 0 6px; letter-spacing: -0.5px;
+  }
+  h2 {
+    font-size: 13pt; color: var(--primary); font-weight: 700;
+    margin: 20px 0 7px; padding-bottom: 3px;
+    border-bottom: 1.5px solid var(--primary);
+    letter-spacing: 0.2px;
+    break-after: avoid; page-break-after: avoid;
+  }
+  h3 {
+    font-size: 10.4pt; color: var(--ink); font-weight: 700;
+    margin: 13px 0 4px;
+    break-after: avoid; page-break-after: avoid;
+  }
+  h4 {
+    font-size: 9.6pt; color: var(--accent); font-weight: 700;
+    margin: 10px 0 3px; text-transform: uppercase; letter-spacing: 0.5px;
+    break-after: avoid; page-break-after: avoid;
+  }
+  p { margin: 0 0 7px; }
+  ul, ol { margin: 0 0 8px; padding-left: 17px; }
+  li { margin-bottom: 3px; }
+  li > ul { margin-top: 3px; margin-bottom: 4px; }
+  strong { color: var(--ink); font-weight: 600; }
+  code {
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 8.6pt; background: var(--wash);
+    padding: 0.5px 3px; border-radius: 2px; color: #33475b;
+  }
+
+  .page-break { break-before: page; page-break-before: always; }
+  .avoid-break { break-inside: avoid; page-break-inside: avoid; }
+
+  /* ---------- Cover ---------- */
+  .cover { text-align: left; margin-bottom: 4px; }
+  .kicker {
+    font-size: 8.4pt; letter-spacing: 2.2px; text-transform: uppercase;
+    color: var(--accent); font-weight: 700; margin-bottom: 9px;
+  }
+  .sub {
+    font-size: 11.2pt; color: var(--muted); font-style: italic;
+    margin: 0 0 10px;
+  }
+  .meta {
+    font-size: 8.6pt; color: var(--muted);
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    padding: 6px 0; margin-bottom: 4px;
+  }
+  .meta span { padding-right: 16px; }
+  .meta b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- Tables ---------- */
+  table {
+    width: 100%; border-collapse: collapse;
+    margin: 5px 0 10px; font-size: 9.1pt;
+    break-inside: avoid; page-break-inside: avoid;
+  }
+  th {
+    text-align: left; background: var(--primary); color: #fff;
+    font-weight: 600; padding: 4px 7px; font-size: 8.7pt;
+    letter-spacing: 0.3px;
+  }
+  td { padding: 4px 7px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  tbody tr:nth-child(even) { background: #fafbfc; }
+  td.num, th.num { text-align: right; white-space: nowrap; }
+  .tag {
+    display: inline-block; font-size: 7.6pt; font-weight: 700;
+    padding: 1px 5px; border-radius: 8px; letter-spacing: 0.3px;
+    text-transform: uppercase;
+  }
+  .t-ok   { background: #e3f3ea; color: var(--good); }
+  .t-mid  { background: #fdf3e0; color: #96601a; }
+  .t-gap  { background: #fbe7e6; color: var(--bad); }
+
+  /* ---------- Callouts ---------- */
+  .box {
+    border: 1px solid var(--line); border-left: 3px solid var(--primary);
+    background: var(--wash); padding: 8px 11px; margin: 9px 0;
+    break-inside: avoid; page-break-inside: avoid;
+  }
+  .box.warn { border-left-color: var(--bad); background: #fdf5f5; }
+  .box.win  { border-left-color: var(--good); background: #f3f9f5; }
+  .box p:last-child { margin-bottom: 0; }
+  .box .lbl {
+    font-size: 8pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1px; color: var(--primary); display: block; margin-bottom: 3px;
+  }
+  .box.warn .lbl { color: var(--bad); }
+  .box.win  .lbl { color: var(--good); }
+
+  /* ---------- Phase header ---------- */
+  .phase {
+    background: var(--ink); color: #fff; padding: 7px 11px;
+    margin: 18px 0 9px; break-after: avoid; page-break-after: avoid;
+    overflow: hidden;
+  }
+  .phase .n {
+    font-size: 8pt; letter-spacing: 2px; text-transform: uppercase;
+    color: #9fb6c9; display: block;
+  }
+  .phase .t { font-size: 12pt; font-weight: 700; letter-spacing: 0.2px; }
+  .phase .w { float: right; font-size: 9pt; color: #9fb6c9; font-weight: 600; padding-top: 7px; }
+
+  /* ---------- Checklist ---------- */
+  .check { list-style: none; padding-left: 0; }
+  .check li {
+    padding-left: 19px; position: relative; margin-bottom: 4px;
+  }
+  .check li:before {
+    content: ""; position: absolute; left: 0; top: 2.5px;
+    width: 9.5px; height: 9.5px; border: 1.2px solid var(--muted); border-radius: 1.5px;
+  }
+
+  /* ---------- Schedule grid ---------- */
+  .sched td:first-child { font-weight: 600; color: var(--ink); white-space: nowrap; }
+
+  .footer-note {
+    margin-top: 16px; padding-top: 7px; border-top: 1px solid var(--line);
+    font-size: 8.3pt; color: var(--muted); font-style: italic;
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================ COVER / PAGE 1 ============================ -->
+<div class="cover">
+  <div class="kicker">Career Roadmap &nbsp;&middot;&nbsp; Full Stack Engineer</div>
+  <h1>The &#8377;35 LPA Roadmap</h1>
+  <p class="sub">From Delta Electronics to SDE-2 at a top Indian product company</p>
+  <div class="meta">
+    <span><b>For:</b> Santhosh R</span>
+    <span><b>Prepared:</b> September 2026</span>
+    <span><b>Target window:</b> May &ndash; August 2027</span>
+    <span><b>Experience then:</b> ~3.5 years</span>
+  </div>
+</div>
+
+<h2>1. What &#8377;35 LPA Actually Means</h2>
+
+<p>&#8377;35 LPA at three-and-a-half years is <strong>SDE-2 at a tier-1 Indian product company</strong>. It is
+reachable from where you are, but it is not the median outcome &mdash; it is roughly the 80th percentile of
+that cohort. Getting there is a function of four things, and only one of them is on your resume today.</p>
+
+<table>
+  <thead>
+    <tr><th style="width:31%">Component</th><th class="num" style="width:19%">Typical share</th><th>What it means for you</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Fixed base</td><td class="num">&#8377;24 &ndash; 28 L</td><td>The number that pays your bills. Negotiate this hardest.</td></tr>
+    <tr><td>ESOP / RSU (annualised)</td><td class="num">&#8377;4 &ndash; 8 L</td><td>Startups quote 4-year totals to inflate the headline. Always divide by 4.</td></tr>
+    <tr><td>Performance variable</td><td class="num">&#8377;2 &ndash; 4 L</td><td>Usually 10% of base, paid at 80&ndash;100%. Treat 90% as the realistic figure.</td></tr>
+    <tr><td>Joining bonus</td><td class="num">&#8377;1 &ndash; 3 L</td><td>One-time. Never let it be counted as &ldquo;CTC&rdquo;.</td></tr>
+  </tbody>
+</table>
+
+<div class="box warn">
+  <span class="lbl">Read every offer this way</span>
+  <p>A &#8377;35 L &ldquo;CTC&rdquo; that is &#8377;19 L base + &#8377;40 L ESOP over 4 years + &#8377;3 L joining is really <strong>&#8377;19 L
+  of guaranteed money</strong>. A &#8377;31 L offer at &#8377;27 L base is the better job. Ask for the written
+  breakup before you react to any number.</p>
+</div>
+
+<h2>2. Where You Stand Today &mdash; Honest Scorecard</h2>
+
+<table>
+  <thead>
+    <tr><th style="width:23%">Dimension</th><th style="width:13%">Today</th><th>Evidence / What&rsquo;s missing</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Product ownership</td><td><span class="tag t-ok">Strong</span></td>
+      <td>Sole developer of a 3-app platform shipped on customer hardware. Better scope than most 2.5-yr devs.</td>
+    </tr>
+    <tr>
+      <td>Frontend (React/TS)</td><td><span class="tag t-ok">Strong</span></td>
+      <td>Production React 18/19, Redux, component library from Figma, hardware-constrained UI, React Native app.</td>
+    </tr>
+    <tr>
+      <td>Auth &amp; API design</td><td><span class="tag t-ok">Strong</span></td>
+      <td>JWT access + httpOnly refresh, permissions re-resolved on refresh, 17 route modules, OpenAPI. This is real.</td>
+    </tr>
+    <tr>
+      <td>Linux / deployment</td><td><span class="tag t-ok">Strong</span></td>
+      <td>systemd, nginx, udev, ARM64 packaging, OTA + rollback. Rare and undervalued &mdash; reframe it as DevOps.</td>
+    </tr>
+    <tr>
+      <td>DSA</td><td><span class="tag t-gap">Blocking</span></td>
+      <td>No evidence at all. Every target company gates on 2 DSA rounds <em>before</em> anyone reads the above.</td>
+    </tr>
+    <tr>
+      <td>Scale &amp; metrics</td><td><span class="tag t-gap">Blocking</span></td>
+      <td>Zero numbers in the resume. No users, RPS, latency, or data volume. Reads as &ldquo;one device, one user&rdquo;.</td>
+    </tr>
+    <tr>
+      <td>Distributed systems</td><td><span class="tag t-gap">Blocking</span></td>
+      <td>No Redis, queues, cloud, containers-in-prod, CI/CD, or observability. Backend is one Node process on a box.</td>
+    </tr>
+    <tr>
+      <td>System design</td><td><span class="tag t-mid">In progress</span></td>
+      <td>Curriculum underway. Needs to shift toward LLD, which is 70% of what a 3-yr candidate is actually asked.</td>
+    </tr>
+    <tr>
+      <td>Domain narrative</td><td><span class="tag t-mid">Risk</span></td>
+      <td>Industrial IoT &rarr; consumer/fintech is a story you must actively bridge, or recruiters deprioritise the profile.</td>
+    </tr>
+    <tr>
+      <td>Network / brand</td><td><span class="tag t-gap">Weak</span></td>
+      <td>No referral pipeline, no public writing. Cold applications from a hardware company get filtered out.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="box">
+  <span class="lbl">The core insight</span>
+  <p>Your engineering <em>depth</em> is already above your years. The problem is that it is
+  <strong>invisible</strong> (no numbers on anything) and <strong>unproven</strong> (no DSA, no scale).
+  Both are fixable in about eight months. Neither requires abandoning what you have built &mdash;
+  the plan below converts your existing embedded/Linux work into cloud vocabulary rather than replacing it.</p>
+</div>
+
+<div class="box warn">
+  <span class="lbl">One title risk to manage</span>
+  <p>&ldquo;Senior Software Engineer&rdquo; at 2.5 years is Delta&rsquo;s hardware-industry title scale. Product-company
+  recruiters read it as inflated and it can trigger distrust or the wrong (higher) bar. Keep the title on
+  the resume &mdash; it is real &mdash; but in outreach and interviews always lead with <em>years and scope</em>,
+  never with the word &ldquo;senior&rdquo;.</p>
+</div>
+
+<!-- ============================ PAGE 2 ============================ -->
+<div class="page-break"></div>
+
+<h2>3. The Eight-Month Plan at a Glance</h2>
+
+<table>
+  <thead>
+    <tr><th style="width:11%">Phase</th><th style="width:13%">Months</th><th style="width:30%">Primary focus</th><th>Exit criterion &mdash; do not move on until this is true</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Phase 0</strong></td><td>Week 1</td><td>Resume surgery + baseline</td><td>Rewritten resume with real numbers; 10 baseline LeetCode problems attempted.</td></tr>
+    <tr><td><strong>Phase 1</strong></td><td>1 &ndash; 3</td><td>DSA foundations + Postgres/Redis/queues</td><td>150+ problems solved; Habex has Redis caching, rate limiting and a job queue running.</td></tr>
+    <tr><td><strong>Phase 2</strong></td><td>4 &ndash; 5</td><td>Cloud, CI/CD, observability + the capstone</td><td>Habex deployed on AWS via GitHub Actions with metrics and a published load-test result.</td></tr>
+    <tr><td><strong>Phase 3</strong></td><td>6 &ndash; 7</td><td>System design, LLD, machine coding, mocks</td><td>Fresh medium in 25 min out loud; 5 mock interviews done; 10 timed machine-coding builds.</td></tr>
+    <tr><td><strong>Phase 4</strong></td><td>8 &ndash; 10</td><td>Applications, interviews, negotiation</td><td>Three offers in hand within a 3-week window.</td></tr>
+  </tbody>
+</table>
+
+<div class="box">
+  <span class="lbl">The rule that makes this work</span>
+  <p><strong>DSA runs every single day from week 1 to the last interview.</strong> It is the long pole and
+  the only truly non-negotiable track. Everything else is layered on top of it. Two problems a day for
+  eight months is ~480 problems &mdash; far more than you need. Consistency beats intensity; a two-week gap
+  costs you a month of re-learning.</p>
+</div>
+
+<!-- Phase 0 -->
+<div class="phase avoid-break">
+  <span class="w">Week 1 &nbsp;&middot;&nbsp; ~8 hours total</span>
+  <span class="n">Phase 0</span>
+  <span class="t">Resume Surgery &amp; Baseline</span>
+</div>
+
+<p>Free wins. These cost one weekend and raise your callback rate before you have learned anything new.</p>
+
+<h4>Step 0.1 &mdash; Put a number on every bullet</h4>
+<p>Not one figure appears in the current resume. You have the data; you simply did not write it down.
+Go find these and put them in:</p>
+<ul>
+  <li><strong>PDU Gen-3:</strong> how many units shipped / in the field? How many concurrent touch panels
+    and admin sessions? The 5-second sampler over a one-hour window = how many datapoints held in memory,
+    mirrored to disk how often? How many alarm types? What is the panel&rsquo;s resolution and frame budget?
+    How large is the ARM64 binary and how long does the installer take end to end?</li>
+  <li><strong>Backend:</strong> 17 route modules across how many endpoints? p95 response time on the device?
+    How many roles and permissions in the RBAC matrix?</li>
+  <li><strong>Habex:</strong> users, rows in the largest table, requests/day, 12 migrations, 3 edge functions.</li>
+  <li><strong>Jourvia:</strong> screens, Jest test count / coverage %, Firestore rules covering how many collections.</li>
+</ul>
+<p>Where a count is genuinely small, use a <em>hard constraint</em> instead &mdash; latency, uptime, protocol
+timing, memory ceiling. &ldquo;Held p95 under 120&nbsp;ms on a 512&nbsp;MB ARM board&rdquo; is stronger than any user count.</p>
+
+<h4>Step 0.2 &mdash; Cut the signal-lowering material</h4>
+<ul>
+  <li><strong>Remove Time Tracker</strong> (Tkinter + Selenium). It reads as scripting, not engineering, and
+    it is your weakest project sitting in prime page-two space.</li>
+  <li><strong>Remove the Certifications line.</strong> &ldquo;SQL (CodeChef), Digital Skills (HackerRank)&rdquo; actively
+    lowers the bar you appear to clear. Keep NCC as a single clause.</li>
+  <li><strong>Trim the skills block.</strong> It currently lists roughly seventy technologies, which reads as
+    padding. Cut to what you would defend in an interview. Tkinter, Selenium and MySQL can go.</li>
+</ul>
+
+<h4>Step 0.3 &mdash; Retarget the summary</h4>
+<p>It currently opens with &ldquo;industrial automation hardware&rdquo;, which tells a Zepto recruiter you are not
+their candidate. Reopen with the transferable identity and demote the hardware to context:</p>
+<div class="box">
+  <p><em>&ldquo;Full stack engineer, 3 years, TypeScript end to end. Sole owner of a production platform &mdash;
+  React operator UI, Node/Express API, real-time telemetry over Socket.IO, JWT + RBAC auth, and automated
+  deployment &mdash; shipped on customer-facing industrial hardware. Comfortable from the browser down to the
+  Linux service.&rdquo;</em></p>
+</div>
+
+<h4>Step 0.4 &mdash; Reorder projects and take a baseline</h4>
+<p>Promote <strong>Habex</strong> to the top &mdash; it is your only publicly reachable, consumer-shaped product,
+and it becomes the capstone in Phase 2. Then sit down and attempt <strong>10 LeetCode easy/medium problems
+untimed</strong>. Do not study first. You need an honest baseline to measure Phase 1 against.</p>
+
+<!-- ============================ PAGE 3 ============================ -->
+<div class="page-break"></div>
+
+<div class="phase avoid-break">
+  <span class="w">Months 1 &ndash; 3 &nbsp;&middot;&nbsp; ~15 hrs/week</span>
+  <span class="n">Phase 1</span>
+  <span class="t">DSA Foundations + Backend Depth</span>
+</div>
+
+<h3>Track A &mdash; DSA (daily, non-negotiable)</h3>
+
+<p>This is the hard filter. Zepto, Swiggy, CRED, Razorpay and Groww all run two DSA rounds before a human
+reads about your PDU architecture. No amount of production depth substitutes for it.</p>
+
+<table>
+  <thead><tr><th style="width:22%">Setting</th><th>Decision</th></tr></thead>
+  <tbody>
+    <tr><td>Resource</td><td><strong>Use the curriculum you already built</strong> at <code>skill\dsa\</code> &mdash; 23 pattern-based chapters in TypeScript with a curated 150-problem plan. It is already scoped to exactly this phase. Do not go shopping for Striver or NeetCode on top of it; collecting resources is procrastination that feels like progress.</td></tr>
+    <tr><td>Language</td><td><strong>TypeScript.</strong> You will interview in it, and it keeps your daily language fluency compounding.</td></tr>
+    <tr><td>Volume</td><td>2 problems/day, 6 days/week &rarr; ~150 by end of Phase 1, ~280 by interview season.</td></tr>
+    <tr><td>The 30-minute rule</td><td>Stuck 30 min &rarr; read the editorial &rarr; understand it fully &rarr; <strong>re-solve from a blank file the next day.</strong> Grinding blind for two hours teaches nothing and burns months.</td></tr>
+    <tr><td>Revision</td><td>Every Sunday, re-solve 5 problems from 2+ weeks ago. Without this you will forget most of what you did.</td></tr>
+  </tbody>
+</table>
+
+<h4>Topic order (do not shuffle &mdash; each builds on the last)</h4>
+<ol>
+  <li><strong>Arrays &amp; hashing</strong> &mdash; frequency maps, prefix sums, Kadane. <em>(2 wks)</em></li>
+  <li><strong>Two pointers &amp; sliding window</strong> &mdash; the highest-yield pattern in Indian product interviews. <em>(1.5 wks)</em></li>
+  <li><strong>Binary search</strong> &mdash; including &ldquo;search on the answer space&rdquo;, which is the version they actually ask. <em>(1 wk)</em></li>
+  <li><strong>Stacks &amp; queues</strong> &mdash; monotonic stack, next-greater-element family. <em>(1 wk)</em></li>
+  <li><strong>Linked lists</strong> &mdash; reversal, cycle detection, merge. Mechanical; get it over with. <em>(1 wk)</em></li>
+  <li><strong>Trees &amp; BST</strong> &mdash; all traversals, LCA, diameter, validate, serialize. <em>(2 wks)</em></li>
+  <li><strong>Heaps &amp; intervals</strong> &mdash; top-K, merge-intervals, meeting rooms. <em>(1 wk)</em></li>
+  <li><strong>Graphs</strong> &mdash; BFS/DFS, topological sort, union-find, Dijkstra basics. <em>(2 wks)</em></li>
+  <li><strong>DP</strong> &mdash; only the classic twenty: knapsack, LIS, coin change, edit distance, house robber, grid paths. <em>(2 wks)</em></li>
+  <li><strong>Recursion &amp; backtracking</strong> &mdash; subsets, permutations, n-queens. <em>(1 wk)</em></li>
+</ol>
+
+<div class="box win">
+  <span class="lbl">Phase 1 DSA checkpoint</span>
+  <p>You can solve an unseen LeetCode <strong>easy</strong> in under 15 minutes, and an unseen
+  <strong>medium</strong> in under 40, while narrating your approach out loud. If not, extend Phase 1 by
+  three weeks rather than moving on &mdash; a weak DSA base collapses under interview pressure.</p>
+</div>
+
+<h3>Track B &mdash; Backend depth (your real differentiator once closed)</h3>
+
+<p>This is the track that turns you from &ldquo;frontend dev who touched Node&rdquo; into &ldquo;backend-credible engineer&rdquo;,
+which is exactly the gap between &#8377;22 L and &#8377;35 L. Do every item <strong>against Habex</strong>, not a toy &mdash;
+you need artefacts you can screenshot and discuss.</p>
+
+<div class="box win">
+  <span class="lbl">You already own this curriculum &mdash; work it, don&rsquo;t rebuild it</span>
+  <p><code>skill\backend\</code> is 24 chapters on exactly this stack (Express / PostgreSQL / Prisma /
+  Redis / BullMQ / Docker) and its chapter-22 capstone builds the Habex backend end to end. The modules
+  below map onto it directly &mdash; treat this table as the <em>sequence and exit criteria</em> for that
+  curriculum, not as a competing syllabus. Same for <code>skill\system-design\</code> in Track D.</p>
+</div>
+
+<table>
+  <thead><tr><th style="width:19%">Module</th><th style="width:9%">Time</th><th>What to actually learn and build</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>B1. Postgres for real</strong></td><td>2 wks</td>
+      <td><code>EXPLAIN ANALYZE</code> until you can read a plan; B-tree vs partial vs composite vs covering
+      indexes; why an index is skipped; the N+1 problem; transactions and the four isolation levels;
+      deadlocks; connection pooling and why serverless breaks it. <strong>Build:</strong> find your slowest
+      Habex query, profile it, index it, record the before/after milliseconds.</td>
+    </tr>
+    <tr>
+      <td><strong>B2. Redis</strong></td><td>1 wk</td>
+      <td>Cache-aside, TTLs and the invalidation problem, token-bucket rate limiting, distributed locks
+      (and why naive <code>SETNX</code> is unsafe), pub/sub, sorted sets for leaderboards.
+      <strong>Build:</strong> per-user rate limiting + a cache layer on Habex&rsquo;s heaviest read path.</td>
+    </tr>
+    <tr>
+      <td><strong>B3. Queues &amp; async</strong></td><td>1 wk</td>
+      <td>BullMQ on Redis. Producers/consumers, retries with exponential backoff, dead-letter queues,
+      idempotent consumers, at-least-once vs exactly-once. <strong>Build:</strong> move Habex&rsquo;s recurring-expense
+      generation and notifications onto a queue with a retry policy.</td>
+    </tr>
+    <tr>
+      <td><strong>B4. Money semantics</strong></td><td>1 wk</td>
+      <td>Idempotency keys, optimistic vs pessimistic locking, double-entry ledgers, audit trails, why you
+      never store money as a float, reconciliation, webhook replay safety. <strong>This is the single topic
+      Razorpay, CRED and Groww probe hardest</strong> &mdash; and it is cheap to learn.
+      <strong>Build:</strong> an idempotency-key middleware on Habex writes.</td>
+    </tr>
+    <tr>
+      <td><strong>B5. API &amp; testing craft</strong></td><td>1 wk</td>
+      <td>Pagination (cursor vs offset and why offset breaks), versioning, error contracts, request
+      validation with Zod, structured logging with correlation IDs. Integration tests with Supertest against
+      a real test database, not mocks.</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ============================ PAGE 4 ============================ -->
+<div class="page-break"></div>
+
+<div class="phase avoid-break">
+  <span class="w">Months 4 &ndash; 5 &nbsp;&middot;&nbsp; ~15 hrs/week</span>
+  <span class="n">Phase 2</span>
+  <span class="t">Cloud, DevOps &amp; the Capstone</span>
+</div>
+
+<h3>Track C &mdash; Cloud &amp; operations</h3>
+
+<p>Good news: this is a <strong>short hop for you specifically</strong>. You already run nginx as a reverse
+proxy, write systemd units, script deployments in Bash, ship versioned OTA updates with rollback, and read
+journald logs. That <em>is</em> DevOps &mdash; it simply happens on an ARM board instead of EC2. This track is
+mostly a vocabulary translation plus three genuinely new tools.</p>
+
+<table>
+  <thead><tr><th style="width:19%">Module</th><th style="width:9%">Time</th><th>What to learn and build</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>C1. Docker</strong></td><td>1 wk</td>
+      <td>Dockerfile, layer caching, multi-stage builds, small base images, <code>docker compose</code> for
+      API + Postgres + Redis locally. <strong>Build:</strong> containerise the Habex API; compose the whole
+      stack with one command.</td>
+    </tr>
+    <tr>
+      <td><strong>C2. AWS fundamentals</strong></td><td>2 wks</td>
+      <td>EC2, security groups, VPC basics, RDS Postgres, ElastiCache, S3, IAM roles, CloudWatch, an
+      Application Load Balancer, Route&nbsp;53 + ACM for TLS. Stay in free tier where you can and set a billing
+      alarm on day one. <strong>Build:</strong> Habex API on EC2 behind nginx and an ALB, talking to RDS
+      and ElastiCache.</td>
+    </tr>
+    <tr>
+      <td><strong>C3. CI/CD</strong></td><td>1 wk</td>
+      <td>GitHub Actions: lint &rarr; typecheck &rarr; test &rarr; build image &rarr; push &rarr; deploy. Branch protection, secrets,
+      environments, rollback. You already built OTA-with-rollback for the PDU &mdash; same idea, and say so
+      in interviews.</td>
+    </tr>
+    <tr>
+      <td><strong>C4. Observability</strong></td><td>1 wk</td>
+      <td>Structured JSON logs with correlation IDs, a <code>/health</code> and <code>/metrics</code>
+      endpoint, RED metrics (rate, errors, duration), p50/p95/p99 as a concept, alerting thresholds,
+      Sentry for errors. Journald &rarr; CloudWatch is the same discipline in a new place.</td>
+    </tr>
+    <tr>
+      <td><strong>C5. Load testing</strong></td><td>3 days</td>
+      <td>k6 or Artillery. Establish a baseline, apply your Redis cache and index work, re-run, and
+      <strong>record the p95 before and after</strong>. This produces the numbers your resume has never had.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>The Capstone: &ldquo;Habex at Scale&rdquo;</h3>
+
+<div class="box win">
+  <span class="lbl">Why upgrade rather than start fresh</span>
+  <p>A new side project restarts your credibility from zero. Habex is already live, on your own domain,
+  with 12 migrations and 3 edge functions. Scaling <em>it</em> closes all four blocking gaps at once &mdash;
+  distributed systems, cloud/DevOps, observability, and measurable numbers &mdash; on a product you can already
+  speak about with authority. One project, four gaps.</p>
+</div>
+
+<p><strong>Ship these seven things by the end of month 5:</strong></p>
+<ol>
+  <li><strong>Containerised API on AWS</strong> &mdash; Docker image on EC2 behind an ALB, RDS Postgres,
+    ElastiCache Redis, TLS on a subdomain.</li>
+  <li><strong>Redis caching + rate limiting</strong> &mdash; cache-aside on the heaviest read path with a
+    documented invalidation strategy; per-user token-bucket limiting.</li>
+  <li><strong>BullMQ job queue</strong> &mdash; recurring expenses, notifications and monthly rollups run
+    asynchronously with retries and a dead-letter queue.</li>
+  <li><strong>Idempotency + audit trail</strong> &mdash; every write carries an idempotency key; every privileged
+    action lands in an immutable audit log.</li>
+  <li><strong>CI/CD pipeline</strong> &mdash; GitHub Actions running tests and deploying on merge to main,
+    with a documented rollback path.</li>
+  <li><strong>Observability</strong> &mdash; structured logs with correlation IDs, a metrics endpoint, Sentry,
+    and one alert that actually fires.</li>
+  <li><strong>A load-test report</strong> &mdash; k6 run at 200 concurrent users, p50/p95/p99 before and after
+    optimisation, written up in the README with a diagram.</li>
+</ol>
+
+<p>Then write <strong>one architecture document</strong> in the repo &mdash; a request-flow diagram, the caching
+and invalidation strategy, the queue topology, and a short &ldquo;what I would do at 100&times; traffic&rdquo; section. That
+document is what you screen-share in a system design round, and it is the single highest-leverage artefact
+in this entire plan.</p>
+
+<h3>Track D &mdash; System design &amp; LLD (start month 4, 3&times; per week)</h3>
+
+<p>You already have a curriculum underway at <code>skill/system-design/</code>. Reweight it: at three years
+of experience, <strong>LLD is roughly 70% of what you will be asked</strong> and HLD is 30%. Most candidates
+over-prepare distributed HLD and then fail an object-modelling round.</p>
+
+<h4>LLD &mdash; be fluent in these ten, out loud, on a whiteboard</h4>
+<p>Rate limiter (all four algorithms) &middot; in-memory cache with LRU + TTL &middot; URL shortener &middot;
+Splitwise / expense splitting &middot; parking lot &middot; elevator &middot; notification service with
+multiple channels &middot; payment idempotency layer &middot; tic-tac-toe / chess board model &middot;
+logging library. Practise SOLID, composition over inheritance, and the strategy/factory/observer patterns
+<em>as they appear in these problems</em> &mdash; not as abstract theory.</p>
+
+<h4>HLD &mdash; the concepts you must be able to draw and defend</h4>
+<p>Load balancing (L4 vs L7) &middot; caching layers and invalidation &middot; DB replication and read replicas
+&middot; sharding and partition keys &middot; CAP and what you trade &middot; consistent hashing &middot;
+message queues and back-pressure &middot; CDN &middot; rate limiting at the edge &middot; idempotency &middot;
+eventual consistency &middot; the outbox pattern. Then practise five full designs: Instagram feed, WhatsApp,
+Uber matching, a payment gateway, and a Zepto-style 10-minute delivery/inventory system.</p>
+
+<div class="box warn">
+  <span class="lbl">Practise out loud, with a timer</span>
+  <p>Silent reading does not transfer to a design round. Record yourself doing a 40-minute design and watch
+  it back once. It is uncomfortable and it is the fastest single improvement available in this plan.</p>
+</div>
+
+<!-- ============================ PAGE 5 ============================ -->
+<div class="page-break"></div>
+
+<div class="phase avoid-break">
+  <span class="w">Months 6 &ndash; 7 &nbsp;&middot;&nbsp; ~15 hrs/week</span>
+  <span class="n">Phase 3</span>
+  <span class="t">Interview Craft</span>
+</div>
+
+<h3>Track E &mdash; Machine coding (Zepto, Swiggy, Flipkart, Meesho)</h3>
+
+<p>A 90-minute round where you build a working feature from scratch. They grade working software first,
+then structure, then edge cases. Do <strong>ten of these, timed, no interruptions</strong>:</p>
+<p>Infinite-scroll feed with a skeleton loader &middot; autocomplete with debounce and request cancellation
+&middot; nested comment thread with reply/collapse &middot; kanban board with drag-and-drop &middot;
+multi-step form with validation &middot; data table with sort, filter and pagination &middot; a poll widget
+with live results &middot; an image carousel &middot; a todo app with optimistic updates and rollback &middot;
+a file-tree explorer.</p>
+<p><strong>Scoring habits:</strong> ship something working by minute 60, then improve. Extract components
+early. Handle loading, empty and error states &mdash; most candidates forget all three. Narrate your trade-offs
+as you type.</p>
+
+<h3>Track F &mdash; JavaScript &amp; TypeScript depth</h3>
+
+<p>You claim TypeScript heavily on the resume, so expect it probed hard.</p>
+<ul>
+  <li><strong>JS internals:</strong> event loop, macro vs microtasks, closures, <code>this</code> binding,
+    prototypal inheritance, hoisting and the temporal dead zone.</li>
+  <li><strong>Implement from scratch:</strong> <code>Promise.all</code> / <code>race</code> /
+    <code>allSettled</code>, debounce, throttle, curry, deep clone, memoize, an event emitter,
+    <code>map</code>/<code>filter</code>/<code>reduce</code>, a retry-with-backoff wrapper.</li>
+  <li><strong>Advanced TS:</strong> generics with constraints, conditional and mapped types, discriminated
+    unions, <code>infer</code>, template literal types, <code>satisfies</code>, and type-safe API contracts
+    shared between client and server.</li>
+  <li><strong>React internals:</strong> reconciliation and keys, when <code>memo</code>/<code>useMemo</code>
+    backfires, virtualisation for long lists, Suspense and error boundaries, concurrent rendering,
+    custom hooks, and why your Redux vs Zustand choice went the way it did.</li>
+</ul>
+
+<h3>Track G &mdash; Behavioural &amp; narrative</h3>
+
+<p>At the &#8377;35 L band the behavioural round is a real filter, not a formality. Write out and rehearse six
+STAR stories from your actual work:</p>
+<ol>
+  <li>The hardest technical decision you made alone (sole ownership of PDU Gen-3 &mdash; pick one architectural call).</li>
+  <li>A production bug you shipped and how you found it.</li>
+  <li>A time you disagreed with a stakeholder or a spec.</li>
+  <li>Something you built that failed or was rewritten.</li>
+  <li>How you learn a new technology under deadline.</li>
+  <li><strong>Why you are leaving hardware for a product company</strong> &mdash; the most important one.
+    The answer is <em>&ldquo;I want to build for scale and for millions of users, and to grow alongside
+    a large engineering team&rdquo;</em>, never <em>&ldquo;my current job is bad&rdquo;</em>. Never criticise Delta.</li>
+</ol>
+
+<h3>Mock interviews &mdash; the highest-ROI hours in the plan</h3>
+<p>Book <strong>at least five</strong> before applying: two DSA, two system design, one behavioural. Use
+Pramp / interviewing.io / peers in your network. A mock exposes in 45 minutes what 40 hours of solo study
+will not: that you go silent when stuck, or jump to code before clarifying, or cannot estimate complexity
+out loud.</p>
+
+<h2>Phase 4 &mdash; Applications, Interviews &amp; Negotiation (Months 8 &ndash; 10)</h2>
+
+<h3>Target list and realistic bands (3.5 yrs, SDE-2)</h3>
+
+<table>
+  <thead><tr><th style="width:26%">Tier</th><th style="width:16%" class="num">SDE-2 band</th><th>Companies</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>Reach</strong><br><span style="color:#6a737d;font-size:8.4pt">Hardest bar, apply last</span></td>
+      <td class="num">&#8377;35 &ndash; 55 L</td>
+      <td>Google, Uber, Atlassian, Rubrik, Databricks, Sprinklr, Arcesium, Media.net, Salesforce</td>
+    </tr>
+    <tr>
+      <td><strong>Primary targets</strong><br><span style="color:#6a737d;font-size:8.4pt">Your stated list &mdash; the &#8377;35 L zone</span></td>
+      <td class="num">&#8377;28 &ndash; 45 L</td>
+      <td>CRED, Razorpay, Groww, Zepto, Swiggy, PhonePe, Postman, Zeta, Navi, Flipkart</td>
+    </tr>
+    <tr>
+      <td><strong>Strong fit, less crowded</strong><br><span style="color:#6a737d;font-size:8.4pt">Same money, better odds for you</span></td>
+      <td class="num">&#8377;25 &ndash; 38 L</td>
+      <td><strong>Juspay</strong> (near-perfect match for your low-level + systems bent), Setu, Hasura,
+      Meesho, Slice, Jupiter, Rapido, Porter, Dream11, Ather &amp; Bounce (hardware+software crossover &mdash;
+      your PDU work is a <em>superpower</em> there, not a liability)</td>
+    </tr>
+    <tr>
+      <td><strong>Calibration only</strong><br><span style="color:#6a737d;font-size:8.4pt">Month 6, to practise</span></td>
+      <td class="num">&#8377;18 &ndash; 26 L</td>
+      <td>Mid-size product firms and funded startups you would not accept. Burn your rust here, not on CRED.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="box warn">
+  <span class="lbl">Sequencing matters &mdash; you get one shot per company</span>
+  <p>Failed loops carry a <strong>6&ndash;12 month cooldown</strong>. Interview the calibration tier first, then
+  strong-fit, then primary targets, then reach &mdash; in that order. Do not apply to CRED in month 3 &ldquo;just to see&rdquo;.</p>
+</div>
+
+<h3>Referrals beat everything</h3>
+<ul>
+  <li><strong>Start now, not in month 8.</strong> A referral roughly triples your callback rate, and cold
+    applications from a hardware company are the ones recruiters filter out first.</li>
+  <li><strong>Build in public from month 1.</strong> Post the PDU architecture (nothing confidential), the
+    Habex scale upgrade, and what you learn each month. Eight months of visible building makes referral
+    requests easy instead of awkward.</li>
+  <li><strong>Ask specifically:</strong> a short message naming the exact role and one line on why you fit
+    converts far better than &ldquo;can you refer me&rdquo;.</li>
+  <li>Reconnect with SIT alumni and ex-Delta colleagues now, while you want nothing from them.</li>
+</ul>
+
+<h3>Negotiation &mdash; where &#8377;28 L becomes &#8377;35 L</h3>
+<ol>
+  <li><strong>Compress your timeline.</strong> Apply everywhere inside a two-week window so offers land
+    together. A single offer has almost no leverage; three offers in one week has enormous leverage.</li>
+  <li><strong>Never state your current CTC first.</strong> &ldquo;I&rsquo;m targeting a market-rate SDE-2 package and
+    I&rsquo;m optimising for the role &mdash; what band is this position budgeted at?&rdquo;</li>
+  <li><strong>Anchor above target.</strong> Ask for &#8377;40&ndash;42 L when you want &#8377;35 L. Recruiters expect to
+    negotiate; your first number is a ceiling, never a floor.</li>
+  <li><strong>Negotiate base hardest</strong>, then joining bonus, then ESOP. Base compounds into every
+    future raise and every future offer.</li>
+  <li><strong>Get the written breakup</strong> before responding &mdash; base / variable / ESOP vesting schedule
+    and cliff / joining bonus and its clawback period.</li>
+  <li><strong>Say it plainly and stop talking:</strong> &ldquo;I have a competing offer at &#8377;X. I&rsquo;d prefer to join
+    you &mdash; can you get to &#8377;Y?&rdquo; Then be silent and let them respond.</li>
+</ol>
+
+<!-- ============================ PAGE 6 ============================ -->
+<div class="page-break"></div>
+
+<h2>4. Your Weekly Schedule</h2>
+
+<p>About <strong>15&ndash;17 hours a week</strong> alongside a full-time job. This is sustainable for eight months;
+25 hours a week is not, and burning out in month three costs you the whole plan.</p>
+
+<table class="sched">
+  <thead><tr><th style="width:14%">Day</th><th style="width:20%">Before work</th><th style="width:33%">Evening (1.5 &ndash; 2 hrs)</th><th class="num" style="width:11%">Hours</th></tr></thead>
+  <tbody>
+    <tr><td>Mon</td><td>1 DSA problem</td><td>Backend / cloud module</td><td class="num">2.5</td></tr>
+    <tr><td>Tue</td><td>1 DSA problem</td><td>Backend / cloud module</td><td class="num">2.5</td></tr>
+    <tr><td>Wed</td><td>1 DSA problem</td><td>System design or LLD</td><td class="num">2.5</td></tr>
+    <tr><td>Thu</td><td>1 DSA problem</td><td>Capstone build</td><td class="num">2.5</td></tr>
+    <tr><td>Fri</td><td>1 DSA problem</td><td><em>Rest &mdash; deliberately</em></td><td class="num">0.5</td></tr>
+    <tr><td>Sat</td><td>&mdash;</td><td>3 hrs capstone + 2 hrs DSA (4 problems)</td><td class="num">5.0</td></tr>
+    <tr><td>Sun</td><td>&mdash;</td><td>Revision: re-solve 5 old problems, write one LinkedIn post, plan the week</td><td class="num">2.0</td></tr>
+    <tr style="background:#eef3f7;font-weight:600"><td colspan="3">Weekly total</td><td class="num">17.5</td></tr>
+  </tbody>
+</table>
+
+<div class="box">
+  <span class="lbl">Track it or it will not happen</span>
+  <p>Keep one spreadsheet with four columns: <em>date, problems solved, hours studied, what shipped</em>.
+  Review it every Sunday. Missing one day is normal; missing a week means you re-plan on the spot rather
+  than quietly abandoning the schedule. You built a habit tracker &mdash; use Habex for this.</p>
+</div>
+
+<h2>5. Master Checklist</h2>
+
+<h4>Phase 0 &mdash; Week 1</h4>
+<ul class="check">
+  <li>Every resume bullet carries a number or a hard constraint</li>
+  <li>Time Tracker project and the Certifications line removed; skills block trimmed</li>
+  <li>Summary rewritten to lead with full-stack TypeScript, not industrial hardware</li>
+  <li>Habex promoted to the first project slot</li>
+  <li>10 baseline LeetCode problems attempted and logged</li>
+  <li>DSA resource chosen (one only) and tracking spreadsheet created</li>
+</ul>
+
+<h4>Phase 1 &mdash; Months 1 &ndash; 3</h4>
+<ul class="check">
+  <li>150+ DSA problems solved; unseen medium in under 40 minutes</li>
+  <li>Postgres: can read an <code>EXPLAIN ANALYZE</code> plan; one Habex query profiled and indexed with before/after numbers</li>
+  <li>Redis: cache-aside layer and per-user rate limiting live on Habex</li>
+  <li>BullMQ queue running with retries and a dead-letter queue</li>
+  <li>Idempotency-key middleware on all Habex writes</li>
+  <li>Integration tests running against a real test database</li>
+  <li>LinkedIn posting started &mdash; at least 6 posts published</li>
+</ul>
+
+<h4>Phase 2 &mdash; Months 4 &ndash; 5</h4>
+<ul class="check">
+  <li>Habex API containerised; full stack runs via <code>docker compose</code></li>
+  <li>Deployed on AWS: EC2 + ALB + RDS + ElastiCache, TLS, billing alarm set</li>
+  <li>GitHub Actions pipeline: test &rarr; build &rarr; deploy, with a rollback path</li>
+  <li>Structured logs with correlation IDs, a metrics endpoint, Sentry, one working alert</li>
+  <li>k6 load test at 200 concurrent users; p50/p95/p99 before and after, written up</li>
+  <li>Architecture document with diagrams committed to the repo</li>
+  <li>DSA total past 250; LLD practice started</li>
+</ul>
+
+<h4>Phase 3 &mdash; Months 6 &ndash; 7</h4>
+<ul class="check">
+  <li>10 timed machine-coding builds completed</li>
+  <li>10 LLD problems solved out loud on a whiteboard</li>
+  <li>5 full HLD designs practised end to end with a timer</li>
+  <li>JS internals implemented from scratch; advanced TS comfortable</li>
+  <li>6 STAR stories written and rehearsed, including &ldquo;why leave hardware&rdquo;</li>
+  <li>5+ mock interviews completed</li>
+  <li>Resume updated with the capstone and its real numbers</li>
+  <li>Referral conversations opened at 8+ target companies</li>
+</ul>
+
+<h4>Phase 4 &mdash; Months 8 &ndash; 10</h4>
+<ul class="check">
+  <li>2 &ndash; 3 calibration interviews taken first</li>
+  <li>All primary-target applications submitted inside a two-week window</li>
+  <li>Every offer&rsquo;s written breakup obtained and annualised correctly</li>
+  <li>3 offers in hand within a 3-week window</li>
+  <li>Negotiated with a real competing number on the table</li>
+</ul>
+
+<h2>6. The Six Ways This Plan Fails</h2>
+
+<table>
+  <thead><tr><th style="width:31%">Failure mode</th><th>The fix</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Collecting resources instead of solving</strong></td><td>One DSA sheet, one system-design course. Buying a third course is procrastination wearing a productivity costume.</td></tr>
+    <tr><td><strong>Skipping DSA because the projects are more fun</strong></td><td>Projects get you past the recruiter. DSA gets you past round one. You need both, and DSA is the one you will avoid.</td></tr>
+    <tr><td><strong>Applying too early</strong></td><td>A failed loop costs a 6&ndash;12 month cooldown at that company. Wait for month 8 on your primary targets.</td></tr>
+    <tr><td><strong>Starting new projects instead of finishing Habex</strong></td><td>One deeply scaled project beats four shallow ones. Ship the seven capstone items before you build anything else.</td></tr>
+    <tr><td><strong>No numbers on the resume</strong></td><td>This is why you get filtered before a human reads a word about your architecture. Fix it in week 1.</td></tr>
+    <tr><td><strong>Burning out at 25 hrs/week in month 2</strong></td><td>15 hours sustained for eight months beats 30 hours for six weeks followed by nothing. Take Friday off, on purpose.</td></tr>
+  </tbody>
+</table>
+
+<div class="box win">
+  <span class="lbl">The bottom line</span>
+  <p>Your depth is already ahead of your years &mdash; sole ownership of a shipped platform, real auth, real-time
+  systems, and deployment automation down to the Linux service. What you are missing is
+  <strong>proof</strong> (DSA), <strong>scale</strong> (cloud, caching, queues), and
+  <strong>visibility</strong> (numbers and a network). Eight months of 15 focused hours a week closes all
+  three. &#8377;35 LPA is not a stretch target from there &mdash; it is the expected outcome of doing this properly.</p>
+</div>
+
+<p class="footer-note">Prepared September 2026 &middot; Compensation bands reflect the Indian product-company market
+for SDE-2 at 3&ndash;4 years and should be re-checked against levels.fyi before negotiating.</p>
+
+</body>
+</html>

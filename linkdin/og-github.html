@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>OG card — github.com/Santhu32144</title>
+<style>
+  /* 1200 x 630. Third card in the Featured set.
+     Santo = blue, Habex = emerald, GitHub = violet — same skeleton and type
+     scale so the row reads as designed, different accent so they don't look
+     like duplicates at thumbnail size.
+
+     NOTE: the repo names in the panel are the product names. If your actual
+     repo slugs differ (e.g. Habex lives in a repo called "exphabbits"), edit
+     the .name spans below before re-rendering. */
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    width: 1200px; height: 630px; overflow: hidden;
+    background: #08080c;
+    font-family: "Segoe UI", "Inter", system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .card {
+    position: relative;
+    width: 1200px; height: 630px;
+    background:
+      radial-gradient(760px 520px at 76% 22%, rgba(139,92,246,0.28) 0%, rgba(139,92,246,0) 64%),
+      radial-gradient(620px 420px at 6% 96%, rgba(139,92,246,0.11) 0%, rgba(139,92,246,0) 62%),
+      linear-gradient(140deg, #08080c 0%, #0c0b14 55%, #12101f 100%);
+    overflow: hidden;
+  }
+
+  .grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(to right,  rgba(255,255,255,0.038) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.038) 1px, transparent 1px);
+    background-size: 52px 52px;
+    mask-image: linear-gradient(120deg, transparent 0%, #000 42%, #000 100%);
+    -webkit-mask-image: linear-gradient(120deg, transparent 0%, #000 42%, #000 100%);
+  }
+
+  .left { position: absolute; left: 74px; top: 108px; width: 600px; }
+
+  .eyebrow {
+    font-family: "Cascadia Code", "Consolas", "Courier New", monospace;
+    font-size: 21px; font-weight: 600; letter-spacing: 2.2px;
+    color: #a78bfa; margin-bottom: 24px;
+  }
+
+  h1 {
+    font-size: 122px; line-height: 0.94;
+    font-weight: 800; letter-spacing: -4.2px; color: #ffffff;
+  }
+  h1 .dot { color: #8b5cf6; }
+
+  .tagline {
+    margin-top: 24px;
+    font-size: 35px; line-height: 1.32; font-weight: 500;
+    color: #9d9ab0; letter-spacing: -0.4px;
+  }
+
+  .stack {
+    position: absolute; left: 74px; bottom: 112px;
+    font-size: 24px; font-weight: 600; color: #c9c6dc; letter-spacing: 0.4px;
+  }
+  .stack .sep { color: #474160; padding: 0 12px; }
+
+  .url {
+    position: absolute; left: 74px; bottom: 56px;
+    font-family: "Cascadia Code", "Consolas", "Courier New", monospace;
+    font-size: 27px; font-weight: 700; color: #a78bfa; letter-spacing: 0.5px;
+  }
+
+  /* repo list, styled after GitHub's pinned-repo rows */
+  .panel {
+    position: absolute;
+    right: 58px; top: 150px;
+    width: 448px;
+    background: #0e0d16;
+    border: 1px solid #241f36;
+    border-radius: 14px;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.55);
+    overflow: hidden;
+  }
+  .panel .head {
+    padding: 14px 22px;
+    border-bottom: 1px solid #241f36;
+    background: #0a0912;
+    font-family: "Cascadia Code", "Consolas", monospace;
+    font-size: 15px; color: #7a7394; letter-spacing: 1.2px;
+  }
+  .repo {
+    padding: 26px 22px;
+    border-bottom: 1px solid #1c1829;
+  }
+  .repo:last-child { border-bottom: 0; }
+  .repo .name {
+    font-family: "Cascadia Code", "Consolas", monospace;
+    font-size: 23px; font-weight: 700; color: #c4b5fd;
+    letter-spacing: -0.3px;
+  }
+  .repo .desc {
+    margin-top: 6px;
+    font-size: 18px; color: #8f8aa6; font-weight: 500;
+  }
+  .repo .lang {
+    margin-top: 9px;
+    font-size: 16px; color: #756f8d; font-weight: 600;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .repo .lang i { width: 11px; height: 11px; border-radius: 50%; display: block; }
+  .ts  { background: #3178c6; }
+  .py  { background: #3572a5; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="grid"></div>
+
+  <div class="left">
+    <div class="eyebrow">&gt; SOURCE CODE</div>
+    <h1>GitHub<span class="dot">.</span></h1>
+    <div class="tagline">Shipped projects, not<br>tutorial repos.</div>
+  </div>
+
+  <div class="panel">
+    <div class="head">PINNED REPOSITORIES</div>
+    <div class="repo">
+      <div class="name">exphabbits</div>
+      <div class="desc">Live expense, habit &amp; investment tracker<br>12 migrations &middot; 67 RLS policies</div>
+      <div class="lang"><i class="ts"></i>TypeScript &middot; React &middot; Supabase</div>
+    </div>
+    <div class="repo">
+      <div class="name">jourvia</div>
+      <div class="desc">Group trip planner, live location sharing<br>offline-first &middot; 50 Jest tests</div>
+      <div class="lang"><i class="ts"></i>TypeScript &middot; React Native &middot; Firestore</div>
+    </div>
+  </div>
+
+  <div class="stack">
+    TypeScript<span class="sep">&middot;</span>React<span class="sep">&middot;</span>Node.js<span class="sep">&middot;</span>Postgres
+  </div>
+  <div class="url">github.com/Santhu32144</div>
+</div>
+</body>
+</html>
